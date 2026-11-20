@@ -1,8 +1,8 @@
 # Oilgate Vacation Rentals
 
-Static preview of three real whole-unit stays in Akron, Ohio. Hosted on GitHub Pages. No guest data, trackers, backend, or checkout credentials.
+Static site for three real whole-unit stays in Akron, Ohio, hosted on GitHub Pages. Pepper provides listing facts and native Lodgify widgets; its Worker source is included but live chat activation is gated. See [PEPPER.md](PEPPER.md) for safety, tests, deployment and current blockers. No credentials are stored in the frontend.
 
-Booking links open existing Lodgify checkouts in USD. The $100 USD security deposit is separate from unverified stay-price comparisons. No prices or savings have been supplied. Parkgate is excluded from Airbnb comparisons while suspended (source date November 16, 2026; recheck after February 5, 2027).
+Booking links open existing Lodgify checkouts in USD. Current prices, deposits and cancellation terms come from Lodgify checkout or fresh request-bound quotes. Parkgate is excluded from Airbnb comparisons while suspended (source date November 16, 2026; recheck after February 5, 2027).
 
 Design: Cobalt Fieldnotes, original static HTML/CSS with two font families. References are cited in each page's footer HTML comment. Publication here does not change oilgaterealty.com, DNS, or Lodgify settings.
 
@@ -14,4 +14,4 @@ DM Sans is locally hosted under the SIL Open Font License; see assets/OFL.txt. G
 
 ## Maintenance
 
-Edit HTML, styles.css, and tokens.css. Relative links support the GitHub Pages project path. No DNS/CNAME is configured. Production-domain migration requires separate owner approval after preview review.
+Edit HTML, styles.css, tokens.css and pepper-knowledge.json. Relative links support the GitHub Pages project path. No site DNS/CNAME migration is configured. The Pepper Worker custom domain is separately authorized by its build specification and remains setup-gated.
