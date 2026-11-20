@@ -3,12 +3,11 @@
   "liveChatEnabled": false,
   "chatEndpoint": "https://pepper.oilgateai.com/chat",
   "source": "Existing Oilgate public listing pages; pet policy not supplied. Live financial terms must come from Lodgify quote.",
-  "hostPhone": "+13303331425",
   "common": {
     "checkin": "Check-in is 3 PM and check-out is 11 AM, Akron local time. Contact your host to arrange arrival.",
     "pets": "Please contact the host to confirm the pet policy before booking.",
     "rules": "Quiet hours are 10 PM to 10 AM, Akron local time. Up to 6 overnight guests, all listed on the booking, and up to 3 visitors. No parties, events, or smoking. Keep trash-can access clear from Sunday night through Monday.",
-    "contact": "Contact your host at 330-333-1425. Complete reservations and payments only through Lodgify checkout."
+    "contact": "Contact your host through the Lodgify inquiry or booking flow. Use the Open Lodgify booking link below. Pepper never shares personal phone numbers. Complete reservations and payments only through Lodgify checkout."
   },
   "properties": {
     "603326": { "name": "Oakdale / Unit 1", "page": "unit-1-at-oilgate-at-oakdale.html", "maxGuests": 6, "parking": "Parking is available. Keep access to the trash cans clear from Sunday night through Monday. Ask the host for arrival parking instructions.", "amenities": "First-floor entire unit. Three bedrooms, Wi-Fi, equipped kitchen, bedroom workspaces, blackout curtains, and shared basement laundry." },

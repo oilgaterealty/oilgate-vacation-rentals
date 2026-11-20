@@ -5,7 +5,7 @@ for (const [page, id] of pages) {
   const url = new URL('../' + page, import.meta.url);
   let html = await readFile(url, 'utf8');
   if (!html.includes('pepper.css')) html = html.replace('</head>', '<link rel="stylesheet" href="pepper.css"><script type="module" src="pepper.js"></script></head>');
-  if (!html.includes('data-pepper')) html = html.replace('</body>', `<aside data-pepper data-property="${id}" aria-label="Pepper guest assistant"><a href="tel:+13303331425">Contact your host</a></aside></body>`);
+  if (!html.includes('data-pepper')) html = html.replace('</body>', `<aside data-pepper data-property="${id}" aria-label="Pepper guest assistant"><a href="${id ? `https://checkout.lodgify.com/en/ogr/${id}/reservation?currency=USD` : 'index.html#stays'}">Contact your host</a></aside></body>`);
   if (id) {
     const widget = `<div class="lodgify-widget"><iframe title="Lodgify booking for ${knowledge.properties[id].name}" loading="lazy" src="lodgify-widget.html?property=${id}&amp;currency=USD"></iframe><a href="https://checkout.lodgify.com/en/ogr/${id}/reservation?currency=USD" target="_blank" rel="noopener">Open secure Lodgify checkout</a></div>`;
     if (html.includes('class="lodgify-widget"')) html = html.replace(/<div class="lodgify-widget">[\s\S]*?<\/aside>/, widget + '</aside>');

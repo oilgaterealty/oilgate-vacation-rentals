@@ -4,6 +4,16 @@ import knowledge from '../pepper-knowledge.json' with { type: 'json' };
 import { safeReply, SAFE, detectIntent, answer } from '../pepper-core.js';
 import { aiIntent, CF_MODELS, createWorker, bounded, renderQuote, lodgifyGet, liveData, validDates } from '../worker/src/index.js';
 const key = '12345678-1234-1234-1234-123456789abc';
+test('Pepper never relays phone numbers in any common format', () => {
+  for (const phone of ['2125550199', '(212) 555-0199', '+1 212 555 0199', '２１２５５５０１９９']) {
+    assert.equal(safeReply('Contact host: ' + phone), SAFE);
+  }
+  assert.equal('hostPhone' in knowledge, false);
+  for (const id of Object.keys(knowledge.properties)) {
+    assert.match(answer(knowledge, id, 'contact'), /Lodgify/);
+    assert.equal(answer(knowledge, id, 'unknown'), SAFE);
+  }
+});
 const env = () => ({ PEPPER_LIMIT: { limit: async () => ({ success: true }) } });
 const req = b => new Request('https://pepper.example/chat', { method: 'POST', headers: { Origin: 'https://oilgaterealty.github.io', 'Content-Type': 'application/json', 'CF-Connecting-IP': '192.0.2.1' }, body: JSON.stringify({ propertyId: '603326', session: key, message: '', ...b }) });
 test('Gemini quota/error -> Gemma -> GLM in exact order', async () => {

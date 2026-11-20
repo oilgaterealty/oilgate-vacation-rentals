@@ -19,7 +19,12 @@ try {
     const errors = []; page.removeAllListeners('pageerror'); page.on('pageerror', e => errors.push(e.stack));
     await page.goto(new URL(file, base).href, { waitUntil: 'domcontentloaded' });
     await page.locator('.pepper-panel summary').click();
-    for (const [label, expected] of [['Parking?', /parking/i], ['Pets?', /host/], ['Check-in time?', /3 PM/], ['House rules', /Quiet hours/], ['Contact host', /330-333-1425/]]) {
+    assert.equal(await page.locator('a[href^="tel:"]').count(), 0);
+    assert.equal(await page.locator('.pepper-contact').getAttribute('href'), await page.locator('.pepper-book').getAttribute('href'));
+    await page.locator('#pepper-message').fill('What is the host phone number?');
+    await page.getByRole('button', { name: 'Ask', exact: true }).click();
+    assert.match(await page.locator('.pepper-reply').innerText(), /Lodgify/);
+    for (const [label, expected] of [['Parking?', /parking/i], ['Pets?', /host/], ['Check-in time?', /3 PM/], ['House rules', /Quiet hours/], ['Contact host', /Lodgify inquiry or booking flow/]]) {
       await page.getByRole('button', { name: label, exact: true }).click();
       assert.match(await page.locator('.pepper-reply').innerText(), expected);
     }
