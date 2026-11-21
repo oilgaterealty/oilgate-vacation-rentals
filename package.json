@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "content:pull": "node scripts/pull-properties.mjs",
+    "build": "node scripts/build-properties.mjs",
+    "test:content": "node scripts/verify-content.mjs",
     "design:check": "node scripts/design-check.mjs",
     "test": "node --test tests/*.test.mjs",
     "test:browser": "node tests/browser.mjs",
@@ -10,5 +13,10 @@
     "test:live": "node scripts/verify-lodgify.mjs",
     "deploy:worker": "wrangler deploy --config worker/wrangler.jsonc"
   },
-  "devDependencies": { "@playwright/test": "^1.57.0", "promptfoo": "^0.120.0", "wrangler": "^4.50.0" }
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "cheerio": "^1.1.2",
+    "promptfoo": "^0.120.0",
+    "wrangler": "^4.50.0"
+  }
 }

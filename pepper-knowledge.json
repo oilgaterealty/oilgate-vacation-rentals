@@ -1,17 +1,54 @@
 {
-  "version": "2026-11-20",
+  "version": "2026-11-21",
   "liveChatEnabled": true,
   "chatEndpoint": "https://pepper-chat.oilgaterealty.workers.dev/chat",
-  "source": "Existing Oilgate public listing pages; pet policy not supplied. Live financial terms must come from Lodgify quote.",
+  "source": "Generated from data/properties.json; Lodgify API takes precedence over public pages. Current financial terms require a date-specific Lodgify quote.",
   "common": {
     "checkin": "Check-in is 3 PM and check-out is 11 AM, Akron local time. Contact your host to arrange arrival.",
     "pets": "Please contact the host to confirm the pet policy before booking.",
-    "rules": "Quiet hours are 10 PM to 10 AM, Akron local time. Up to 6 overnight guests, all listed on the booking, and up to 3 visitors. No parties, events, or smoking. Keep trash-can access clear from Sunday night through Monday.",
-    "contact": "Contact your host through the Lodgify inquiry or booking flow. Use the Open Lodgify booking link below. Pepper never shares personal phone numbers. Complete reservations and payments only through Lodgify checkout."
+    "rules": "Quiet hours are 10 PM to 10 AM, Akron local time. No parties, events, smoking or pets. Minimum booking age 18. Guests are responsible for damage they cause. Oilgate Realty is not liable for injury or loss of personal property, except as required by law.",
+    "contact": "Email oilgaterealty@gmail.com, or contact your host through the Lodgify inquiry or booking flow. Use the Open Lodgify booking link below. Pepper never shares personal phone numbers. Complete reservations and payments only through Lodgify checkout.",
+    "cleaning": "No cleaning fees, ever. Unless house rules are broken."
   },
   "properties": {
-    "603326": { "name": "Oakdale / Unit 1", "page": "unit-1-at-oilgate-at-oakdale.html", "maxGuests": 6, "parking": "Parking is available. Keep access to the trash cans clear from Sunday night through Monday. Ask the host for arrival parking instructions.", "amenities": "First-floor entire unit. Three bedrooms, Wi-Fi, equipped kitchen, bedroom workspaces, blackout curtains, and shared basement laundry." },
-    "603323": { "name": "Oakdale / Unit 2", "page": "unit-2-at-oilgate-at-oakdale.html", "maxGuests": 6, "parking": "Parking is available. Keep access to the trash cans clear from Sunday night through Monday. Ask the host for arrival parking instructions.", "amenities": "Entire Oakdale unit with three bedrooms, Wi-Fi, kitchen, and shared basement laundry." },
-    "728474": { "name": "Oilgate at Parkgate", "page": "oilgate-at-parkgate.html", "maxGuests": 6, "parking": "On-site parking is available. Keep access to the trash cans clear from Sunday night through Monday. Ask the host for arrival parking instructions.", "amenities": "Entire three-bedroom home. Wi-Fi, workspace, equipped kitchen, dishwasher, TV, washer and dryer, deck, yard, and smart lock. Outdoor security cameras are disclosed; ask the host for locations." }
+    "603323": {
+      "name": "Oakdale / Unit 2",
+      "page": "unit-2-at-oilgate-at-oakdale.html",
+      "maxGuests": 6,
+      "bedrooms": 3,
+      "beds": 3,
+      "parking": "Parking. Park in designated areas only: Unit 2 guests are permitted to use the driveway. Unit 1 guests are required to park on the street. If needed, feel free to communicate with Unit 1 guests regarding parking schedules to avoid any block-in situations.",
+      "checkin": "Check-in is 3 PM and check-out is 11 AM, Akron local time. Contact your host to arrange arrival.",
+      "pets": "Pets are not allowed. Please contact the host if you have a question about this policy.",
+      "amenities": "3 bedrooms · 3 beds · 1 bathroom · Up to 6 guests. 1 Bathroom, 3 Bedroom, 1 Dining-Room, 1 Kitchen, 1 Living room, Coffee machine, Cooking utensils, Grill, Kitchen stove, Microwave, Oven, Refrigerator, Toaster, Piano, TV (Cable), Wireless Broadband Internet, Air conditioning, Central heating, Heating available, Clothes dryer, Iron & Board, Washing machine, Vacuum cleaner, Carbon Monoxide Detector, Fire Extinguisher, First aid kit, Smoke Detector, Hair dryer, Essentials, Shower, Towel-set, Hot Tub, Bed linen, 2 Double bed, 1 Queen bed, Parking available, Parking-on-street.",
+      "rules": "Quiet hours are 10 PM to 10 AM, Akron local time. Up to 6 overnight guests, all listed on the booking, and up to 3 visitors. No parties, events, smoking or pets. Keep trash-can access clear from Sunday night through Monday. Minimum booking age 18. Guests are responsible for damage they cause. Oilgate Realty is not liable for injury or loss of personal property, except as required by law.",
+      "description": "Welcome to Unit 2, a spacious upper-level unit for short and mid-term stays. Three bedrooms, each with a comfortable bed, a workspace with a plush chair, and FireTV with free cable, plus closets, dressers, and blackout curtains. Your unit has its own private, fully equipped kitchen, cozy living room, and dining room. A washer and dryer are in the basement laundry room, the only space shared with the other unit. Ideal for professionals, students, or anyone seeking privacy in Akron."
+    },
+    "603326": {
+      "name": "Oakdale / Unit 1",
+      "page": "unit-1-at-oilgate-at-oakdale.html",
+      "maxGuests": 6,
+      "bedrooms": 3,
+      "beds": 3,
+      "parking": "Parking. Park in designated areas only: Unit 1 guests must use street parking. The driveway is reserved for Unit 2 guests. Please do not block the driveway or park in a way that prevents Unit 2 guests from entering or exiting.",
+      "checkin": "Check-in is 3 PM and check-out is 11 AM, Akron local time. Contact your host to arrange arrival.",
+      "pets": "Pets are not allowed. Please contact the host if you have a question about this policy.",
+      "amenities": "3 bedrooms · 3 beds · 1 bathroom · Up to 6 guests. 1 Bathroom, 3 Bedroom, 1 Dining-Room, 1 Kitchen, 1 Living room, Coffee machine, Cooking utensils, Grill, Kitchen stove, Microwave, Oven, Refrigerator, Toaster, Piano, TV (Cable), Wireless Broadband Internet, Air conditioning, Ceiling fans, Central heating, Heating available, Clothes dryer, Iron & Board, Washing machine, Vacuum cleaner, Carbon Monoxide Detector, Fire Extinguisher, First aid kit, Smoke Detector, Hair dryer, Essentials, Shower, Towel-set, Hot Tub, Bed linen, 2 Double bed, 1 Queen bed, Parking available, Parking-on-street, Parking Included.",
+      "rules": "Quiet hours are 10 PM to 10 AM, Akron local time. Up to 6 overnight guests, all listed on the booking, and up to 3 visitors. No parties, events, smoking or pets. Keep trash-can access clear from Sunday night through Monday. Minimum booking age 18. Guests are responsible for damage they cause. Oilgate Realty is not liable for injury or loss of personal property, except as required by law.",
+      "description": "Welcome to Unit 1, a cozy & inviting space on the first floor of our charming duplex. This unit features three comfortable bedrooms, each with blackout curtains, a workspace, & Fire TV with cable included. Enjoy the living room with its original wood coffered ceilings & free cable, a fully equipped kitchen, & access to the basement laundry room. Perfect for short or mid-term stays, Unit 1 offers privacy, comfort, & easy access to local amenities, making it an ideal choice for your Akron visit."
+    },
+    "728474": {
+      "name": "Oilgate at Parkgate",
+      "page": "oilgate-at-parkgate.html",
+      "maxGuests": 6,
+      "bedrooms": 2,
+      "beds": 2,
+      "parking": "Parking. Park in designated areas only: Feel free to use the street or driveway for parking. The garage is not in use and please do not park on the grass.",
+      "checkin": "Check-in is 3 PM and check-out is 11 AM, Akron local time. Contact your host to arrange arrival.",
+      "pets": "Pets are not allowed. Please contact the host if you have a question about this policy.",
+      "amenities": "2 bedrooms · 2 beds · 1 bathroom · Up to 6 guests. 1 Bathroom, 2 Bedroom, 1 Living room, 1 Dining-Room, 1 Kitchen, Coffee machine, Cooking utensils, Dishwasher, Kitchen stove, Microwave, Oven, Refrigerator, Spices, Toaster, TV (Cable), Wireless Broadband Internet, Air conditioning, Ceiling fans, Central heating, Heating available, Bathroom & Laundry, Clothes dryer, Iron & Board, Washing machine, Vacuum cleaner, Buzzer, Carbon Monoxide Detector, Security system, Smoke Detector, Hair dryer, Essentials, Shower, Towel-set, Hot Tub, Bed linen, 1 Double bed, 1 Queen bed, Parking available, Parking-on-street, Parking Included.",
+      "rules": "Quiet hours are 10 PM to 10 AM, Akron local time. Up to 6 overnight guests, all listed on the booking, and up to 3 visitors. No parties, events, smoking or pets. Keep trash-can access clear from Sunday night through Monday. Minimum booking age 18. Guests are responsible for damage they cause. Oilgate Realty is not liable for injury or loss of personal property, except as required by law.",
+      "description": "Completely renovated 2BR home in one of Akron’s best neighborhoods. Enjoy brand-new appliances, luxury bedding, blackout curtains, 75\" TV w/ free cable & PPV, fast Wi-Fi, smart lock entry, & peaceful vibes. Minutes from Akron's famous Swensons, Highland Square, downtown, Sand Run Metro Park and LeBron’s I Promise School. Features plush comforters, hotel-style linens, fans in every room, a luxe showerhead, deck, big yard, washer/dryer, on-site parking, and outdoor security cams for peace of mind."
+    }
   }
 }

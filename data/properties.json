@@ -1,0 +1,968 @@
+{
+  "pulledAt": "2026-11-21T00:57:12.403Z",
+  "sources": [
+    "https://oilgaterealty.com/en",
+    "https://api.lodgify.com/v2/properties/{id}",
+    "https://api.lodgify.com/v2/properties/{id}/rooms"
+  ],
+  "contact": {
+    "email": "oilgaterealty@gmail.com",
+    "social": [
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/profile.php?id=61575747832440"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.instagram.com/oilgaterealty/"
+      },
+      {
+        "name": "X",
+        "url": "https://x.com/OilgateRealty"
+      }
+    ]
+  },
+  "ownerTerms": {
+    "source": "LaVante, November 20 2026, t958u",
+    "cleaning": "No cleaning fees, ever",
+    "cleaningException": "Unless house rules are broken.",
+    "minimumAge": 18,
+    "liability": "Guests are responsible for damage they cause. Oilgate Realty is not liable for injury or loss of personal property, except as required by law."
+  },
+  "missing": [
+    "Matching live quotes for Direct, Airbnb, Vrbo and Booking.com were not supplied by the content endpoints.",
+    "A public LinkedIn page was not verified; the official source links to an admin dashboard.",
+    "No TikTok or YouTube link was found on the official source."
+  ],
+  "properties": {
+    "603323": {
+      "id": "603323",
+      "name": "Oakdale / Unit 2",
+      "sourceName": "Unit 2 at Oilgate at Oakdale",
+      "page": "unit-2-at-oilgate-at-oakdale.html",
+      "publicUrl": "https://oilgaterealty.com/en/unit-2-at-oilgate-at-oakdale",
+      "description": "Welcome to Unit 2, a spacious upper-level unit for short and mid-term stays. Three bedrooms, each with a comfortable bed, a workspace with a plush chair, and FireTV with free cable, plus closets, dressers, and blackout curtains. Your unit has its own private, fully equipped kitchen, cozy living room, and dining room. A washer and dryer are in the basement laundry room, the only space shared with the other unit. Ideal for professionals, students, or anyone seeking privacy in Akron.",
+      "bedrooms": 3,
+      "bathrooms": 1,
+      "beds": 3,
+      "bedTypes": [
+        "2 Double bed",
+        "1 Queen bed"
+      ],
+      "maxGuests": 6,
+      "amenities": {
+        "room": [
+          "1 Bathroom",
+          "3 Bedroom",
+          "1 Dining-Room",
+          "1 Kitchen",
+          "1 Living room"
+        ],
+        "further-info": [],
+        "cooking": [
+          "Coffee machine",
+          "Cooking utensils",
+          "Grill",
+          "Kitchen stove",
+          "Microwave",
+          "Oven",
+          "Refrigerator",
+          "Toaster"
+        ],
+        "entertainment": [
+          "Piano",
+          "TV (Cable)",
+          "Wireless Broadband Internet"
+        ],
+        "heating": [
+          "Air conditioning",
+          "Central heating",
+          "Heating available"
+        ],
+        "laundry": [
+          "Clothes dryer",
+          "Iron & Board",
+          "Washing machine"
+        ],
+        "livingroom": [],
+        "miscellaneous": [
+          "Vacuum cleaner",
+          "Carbon Monoxide Detector",
+          "Fire Extinguisher",
+          "First aid kit",
+          "Smoke Detector"
+        ],
+        "outside": [],
+        "sanitary": [
+          "Hair dryer",
+          "Essentials",
+          "Shower",
+          "Towel-set",
+          "Hot Tub"
+        ],
+        "sleeping": [
+          "Bed linen",
+          "2 Double bed",
+          "1 Queen bed"
+        ],
+        "parking": [
+          "Parking available",
+          "Parking-on-street"
+        ]
+      },
+      "petsAllowed": false,
+      "checkin": "03:00 PM",
+      "checkout": "11:00 AM",
+      "houseRules": "1. Safety is our number one priority: For any emergencies, please call 911. For any safety hazards that may arise, please notify management immediately.\n\n2. No parties in the home: Guests are limited to 3 visitors at a time total in the home. No overnight stays are allowed unless previously approved and paid for.\n\n3. No cigarette smoking in the home.\n\n4. Quiet hours are between 10 pm and 10 am: Please be respectful of guests in the other unit and neighbors.\n\n5. Laundry room: The basement laundry room is used by both units. Please clean up after yourself.\n\n6. Park in designated areas only: Unit 2 guests are permitted to use the driveway. Unit 1 guests are required to park on the street. If needed, feel free to communicate with Unit 1 guests regarding parking schedules to avoid any block-in situations.\n\n7. Remove laundry from washer/dryer immediately after the cycle completes.\n\n8. No pets are allowed: This property is pet-free.\n\n9. Trash and recycling: Trash and recycling day is Sunday night for pickup on Monday morning. Please ensure all trash and recycling are placed in the appropriate bins and that the bins are placed at the curb and removed at these times. Please do not park in front of the trashcans Sunday night or Monday morning.\n\n10. Use of appliances: Please use all appliances and amenities appropriately, and notify management if anything is malfunctioning.\n\n11. Check-In/Check-Out: Please adhere to the check-in and check-out times unless prior arrangements have been made. Follow all check-out instructions provided.\n\n12. No alterations to the property: Guests should not make any alterations to the property, such as rearranging furniture, without permission.\n\n13. No excessive noise: In addition to quiet hours, guests should avoid excessive noise at all times.",
+      "policies": {
+        "Payment Schedule": "100% of the total amount is due at time of reservation.Remaining balance: Due later",
+        "Cancellation Policy": "All paid prepayments are non-refundable.",
+        "Security deposit": "A pre-authorization of 25% / €89 is held on 1 day(s) before arrival and voided on 5 day(s) after departure"
+      },
+      "photos": [
+        {
+          "url": "https://l.icdbcdn.com/oh/d199b6be-28fb-44cd-b398-1b6ca5f328a8.jpg?f=32",
+          "alt": "Unit 2"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/e6e158f5-c879-49bc-812d-13618ec8a419.jpg?f=32",
+          "alt": "Unit 2"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/53b7c0f2-b983-4cf9-b6ef-837b4fce6182.jpg?f=32",
+          "alt": "Unit 2"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/a7f051a1-41c1-4636-aff7-3d35d1b03ff3.jpg?f=32",
+          "alt": "Unit 2"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/5dbc69b4-c88e-4e3a-9c6e-c985e09c3721.jpg?f=32",
+          "alt": "Unit 2 Dining Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/4f3fd9f3-f408-487d-b31a-988bf6dfab25.jpg?f=32",
+          "alt": "Unit 2 Kitchen"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/7b12f5ce-0f3a-4793-a754-26232c91b714.jpg?f=32",
+          "alt": "Unit 2 Kitchen"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/cfd29491-92e8-45c5-8936-5f2d2dfc86b9.jpg?f=32",
+          "alt": "Unit 2 Kitchen"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/a669b292-4cb0-4be2-a8ab-12b434a8c876.jpg?f=32",
+          "alt": "Unit 2 Living Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/c89d1a6c-412b-43f1-9423-23e82cf7103b.jpg?f=32",
+          "alt": "Unit 2 Living Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/d1c91746-b66f-453a-96db-0b6b6dca1832.jpg?f=32",
+          "alt": "Unit 2"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/d5232360-0ccb-4505-9ed5-33280f9fb75c.jpg?f=32",
+          "alt": "Unit 2 Living Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/b27836ed-6991-4fd4-a52c-bccf10a469e5.jpg?f=32",
+          "alt": "Unit 2 Living Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/66c7af4d-0193-445a-a04a-90af4da8f287.jpg?f=32",
+          "alt": "Unit 2 Side Entrance"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/22a97e77-73a0-4a09-b9bf-1f6e8586110b.jpg?f=32",
+          "alt": "Unit 2 Side Entrance"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/a96a8ed6-70f2-43de-9c54-7322ac93b7b3.jpg?f=32",
+          "alt": "Unit 2 Entrance"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/b0e20f62-3b15-44cd-8af3-366400d4a488.jpg?f=32",
+          "alt": "Unit 2 Entrance"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/247b40a6-df7b-4657-95c9-7c5e30ac1d1f.jpg?f=32",
+          "alt": "Unit 2 Bathroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/fc8f2bf3-78a8-4fdd-bcf9-d46b275b91d8.jpg?f=32",
+          "alt": "Unit 2 Bathroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/fbaae69d-4618-4852-b7f4-d4a4122b499c.jpg?f=32",
+          "alt": "Laundry Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/752d97cb-5950-497a-809d-8ea64af7b5c1.jpg?f=32",
+          "alt": "Unit 2 Bathroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/2b7615f6-a8aa-42a0-8abc-99f602f1043c.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/ae29379c-914a-4225-a142-db5110100131.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/05106f5c-3cbf-41db-ba75-69ea940ec4b8.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/7b107c94-6c98-4f65-beb2-280f450b4226.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/030d754b-bfa5-425b-adc2-8340f5425f96.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/735c0222-ec6b-4fa1-a20c-55c8e029cf70.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/e78953b9-91c8-45c7-ae86-c8046ce1f5ac.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/adfa0191-6b21-442e-9c06-323a6071684c.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/a79fd9b2-12bd-44e4-821f-1db7475228ba.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/6527c3c8-879f-4167-9773-9831a9e712b3.jpg?f=32",
+          "alt": "Penthouse Suite (Room)373d 4ca7 af57 2b89fd3bf883"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/33e1661f-4199-46b9-87fb-6bb2c00b51bd.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/62da0b5e-12f6-4eea-aef9-5dfa3fcc0de0.jpg?f=32",
+          "alt": "Penthouse Suite (Room)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/bfbdd3ce-83e7-46e0-85c4-ac1ae769f318.jpg?f=32",
+          "alt": "Angel Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/f0afbbeb-2150-497d-9487-ef8555e3e3be.jpg?f=32",
+          "alt": "Angel Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/691710bd-9d68-411a-844f-4a7c500cb6e2.jpg?f=32",
+          "alt": "Angel Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/d6f83971-91a2-4a32-9103-d93812af2258.jpg?f=32",
+          "alt": "Angel Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/8af02ffb-5580-439e-9cc5-1f2fc43c786e.jpg?f=32",
+          "alt": "Angel Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/56185eae-ea98-4409-8b5b-0cf16a1e2f52.jpg?f=32",
+          "alt": "Mosaic Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/02074fbb-ccf3-4b07-a19b-502460e680d6.jpg?f=32",
+          "alt": "Mosaic Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/7ef4d244-996d-4398-a820-4fb7a39c2567.jpg?f=32",
+          "alt": "Mosaic Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/0969d4d9-990b-4375-b568-6e97741f9840.jpg?f=32",
+          "alt": "Mosaic Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/53acc710-1cae-431a-8cb0-925b826bd40a.jpg?f=32",
+          "alt": "Mosaic Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/a5c9844a-1a5e-4941-a086-7596dd55665a.jpg?f=32",
+          "alt": "Mosaic Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/0e9a2057-b77a-4fb3-b355-9b23cc0a555f.jpg?f=32",
+          "alt": "Mosaic Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/dc33698b-9752-4af6-8f38-41f8e0fb6e42.jpg?f=32",
+          "alt": "Mosaic Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/f11445b8-d209-4f9e-93f2-a8e583892790.jpg?f=32",
+          "alt": "Mosaic Room"
+        }
+      ],
+      "publicFacts": [
+        {
+          "question": "What are the check-in and check-out times?",
+          "answer": "Check-in time is 03:00 PM. Check-out time is 11:00 AM."
+        },
+        {
+          "question": "How many guests can stay at this property?",
+          "answer": "This property can accommodate up to 6 guests."
+        },
+        {
+          "question": "Are pets allowed?",
+          "answer": "Pets are not allowed at this property."
+        },
+        {
+          "question": "Are children welcome?",
+          "answer": "Yes, children are welcome at this property."
+        },
+        {
+          "question": "What amenities are available?",
+          "answer": "The property offers the following amenities: Parking, Parking on street, Accept credit card, Children welcome, Pets not allowed, Smoking not allowed, Wheelchair inaccessible, Bed linen, Blow dryer, Clothes dryer, Essentials, Iron and board, Shower, Towel set, Bathtub, Washing machine, Air conditioning, Central heating, General heating, Piano, TV cable, Wireless Broadband Internet wireless, Coffee machine, Cooking utensils, Grill, Kitchen stove, Microwave, Oven, Refrigerator, Toaster, Vacuum cleaner, Carbon monoxide detector, Fire extinguisher, First aid kit, Smoke detector."
+        },
+        {
+          "question": "What is the cancellation policy for this property?",
+          "answer": "All paid prepayments are non-refundable."
+        },
+        {
+          "question": "Is a security deposit required?",
+          "answer": "A pre-authorization of 25% / USD 100.00 is held on 1 day(s) before arrival and voided on 5 day(s) after departure"
+        }
+      ],
+      "missing": []
+    },
+    "603326": {
+      "id": "603326",
+      "name": "Oakdale / Unit 1",
+      "sourceName": "Unit 1 at Oilgate at Oakdale",
+      "page": "unit-1-at-oilgate-at-oakdale.html",
+      "publicUrl": "https://oilgaterealty.com/en/unit-1-at-oilgate-at-oakdale",
+      "description": "Welcome to Unit 1, a cozy & inviting space on the first floor of our charming duplex. This unit features three comfortable bedrooms, each with blackout curtains, a workspace, & Fire TV with cable included. Enjoy the living room with its original wood coffered ceilings & free cable, a fully equipped kitchen, & access to the basement laundry room. Perfect for short or mid-term stays, Unit 1 offers privacy, comfort, & easy access to local amenities, making it an ideal choice for your Akron visit.",
+      "bedrooms": 3,
+      "bathrooms": 1,
+      "beds": 3,
+      "bedTypes": [
+        "2 Double bed",
+        "1 Queen bed"
+      ],
+      "maxGuests": 6,
+      "amenities": {
+        "room": [
+          "1 Bathroom",
+          "3 Bedroom",
+          "1 Dining-Room",
+          "1 Kitchen",
+          "1 Living room"
+        ],
+        "further-info": [],
+        "cooking": [
+          "Coffee machine",
+          "Cooking utensils",
+          "Grill",
+          "Kitchen stove",
+          "Microwave",
+          "Oven",
+          "Refrigerator",
+          "Toaster"
+        ],
+        "entertainment": [
+          "Piano",
+          "TV (Cable)",
+          "Wireless Broadband Internet"
+        ],
+        "heating": [
+          "Air conditioning",
+          "Ceiling fans",
+          "Central heating",
+          "Heating available"
+        ],
+        "laundry": [
+          "Clothes dryer",
+          "Iron & Board",
+          "Washing machine"
+        ],
+        "livingroom": [],
+        "miscellaneous": [
+          "Vacuum cleaner",
+          "Carbon Monoxide Detector",
+          "Fire Extinguisher",
+          "First aid kit",
+          "Smoke Detector"
+        ],
+        "outside": [],
+        "sanitary": [
+          "Hair dryer",
+          "Essentials",
+          "Shower",
+          "Towel-set",
+          "Hot Tub"
+        ],
+        "sleeping": [
+          "Bed linen",
+          "2 Double bed",
+          "1 Queen bed"
+        ],
+        "parking": [
+          "Parking available",
+          "Parking-on-street",
+          "Parking Included"
+        ]
+      },
+      "petsAllowed": false,
+      "checkin": "03:00 PM",
+      "checkout": "11:00 AM",
+      "houseRules": "1. Safety is our number one priority: For any emergencies, please call 911. For any safety hazards that may arise, please notify management immediately.\n\n2. No parties in the home: Guests are limited to 3 visitors at a time total in the home. No overnight stays are allowed unless previously approved and paid for.\n\n3. No cigarette smoking in the home.\n\n4. Quiet hours are between 10 pm and 10 am: Please be respectful of guests in the other unit and neighbors.\n\n5. Laundry room: The basement laundry room is used by both units. Please clean up after yourself.\n\n6. Park in designated areas only: Unit 1 guests must use street parking. The driveway is reserved for Unit 2 guests. Please do not block the driveway or park in a way that prevents Unit 2 guests from entering or exiting.\n\n7. Remove laundry from washer/dryer immediately after the cycle completes.\n\n8. No pets are allowed: This property is pet-free.\n\n9. Trash and recycling: Trash and recycling day is Sunday night for pickup on Monday morning. Please ensure all trash and recycling are placed in the appropriate bins and that the bins are placed at the curb and removed at these times. Please do not park in front of the trashcans Sunday night or Monday morning.\n\n10. Use of appliances: Please use all appliances and amenities appropriately, and notify management if anything is malfunctioning.\n\n11. Check-In/Check-Out: Please adhere to the check-in and check-out times unless prior arrangements have been made. Follow all check-out instructions provided.\n\n12. No alterations to the property: Guests should not make any alterations to the property, such as rearranging furniture, without permission.\n\n13. No excessive noise: In addition to quiet hours, guests should avoid excessive noise at all times.",
+      "policies": {
+        "Payment Schedule": "100% of the total amount is due at time of reservation.Remaining balance: Due later",
+        "Cancellation Policy": "All paid prepayments are non-refundable.",
+        "Security deposit": "A pre-authorization of 25% / €89 is held on 1 day(s) before arrival and voided on 5 day(s) after departure"
+      },
+      "photos": [
+        {
+          "url": "https://l.icdbcdn.com/oh/f785052a-1247-4c8a-ad91-9fce6e22c719.jpg?f=32",
+          "alt": "Unit 1"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/3f98c271-5ed2-45f3-a424-317da1dd11b7.jpg?f=32",
+          "alt": "Unit 1"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/e8414b90-7871-490a-8f8b-358913674a61.jpg?f=32",
+          "alt": "Unit 1"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/c439bdd5-b5a5-496c-af2d-26c0df645270.jpg?f=32",
+          "alt": "Unit 1"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/82841e27-3250-470d-91d2-c6d2bae1d03a.jpg?f=32",
+          "alt": "Unit 1 Side Entrance"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/ab1c50dc-2014-40ad-8afd-38f774e7d07f.jpg?f=32",
+          "alt": "Unit 1 Side Entrance"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/2358a9a3-75e3-4838-8350-7ea734242375.jpg?f=32",
+          "alt": "Unit 1 Living Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/2c5f7edf-42c0-45cb-a793-e5ef98e5937e.jpg?f=32",
+          "alt": "Unit 1 Interior Entrance"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/93537ccf-b977-448e-904e-0c1913cb3185.jpg?f=32",
+          "alt": "Unit 1 Lockbox"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/53b82a35-9dfc-4442-8d20-f9b15b76d2e8.jpg?f=32",
+          "alt": "Unit 1 Living Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/21e2bc1b-2347-445a-b550-6c59cfce1983.jpg?f=32",
+          "alt": "Unit 1 Living Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/4f077f84-9b77-410a-8752-43b950570545.jpg?f=32",
+          "alt": "Unit 1 Living Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/d3b2c5b4-9781-46d9-a197-30f1252d5dc2.jpg?f=32",
+          "alt": "Unit 1 Kitchen"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/5f7fb0d9-06c7-4768-9cbc-5439d73f1ce3.jpg?f=32",
+          "alt": "Unit 1 Kitchen"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/153e83bc-0b71-462a-b9ea-4483f1ea0e28.jpg?f=32",
+          "alt": "Unit 1 Kitchen"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/bbe84758-b668-4ef8-b915-69c47a89d284.jpg?f=32",
+          "alt": "Unit 1 Bathroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/01de3f66-e46d-4834-af07-e0ef0c2d3c83.jpg?f=32",
+          "alt": "Unit 1 Bathroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/d853f545-b4ed-429f-bc8c-65d4236efc7e.jpg?f=32",
+          "alt": "Unit 1 Bathroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/cdb5ba7a-b382-4bef-a018-c80a53df72eb.jpg?f=32",
+          "alt": "Unit 1 Dining Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/6a6ca16b-9086-4352-97c0-eb29fbc24268.jpg?f=32",
+          "alt": "Unit 1 Dining Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/a788d852-4450-473f-9309-d9a85a6d6917.jpg?f=32",
+          "alt": "Unit 1 Dining Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/81b972f4-2090-44dc-8902-393893a53f02.jpg?f=32",
+          "alt": "Laundry Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/0bddb87b-4ea9-42ed-99b6-3e3cac61c0d6.jpg?f=32",
+          "alt": "Fireplace Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/65257503-cbee-49e5-bddc-ac9f8d251b18.jpg?f=32",
+          "alt": "Fireplace Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/4543e9fd-d589-47fe-a782-1d6d4eb58e76.jpg?f=32",
+          "alt": "Fireplace Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/273f9f8d-d28b-4dd2-a165-f7d45884169f.jpg?f=32",
+          "alt": "Fireplace Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/65decb1b-7be0-4694-8628-b03f4696534a.jpg?f=32",
+          "alt": "Owner's Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/2e5e0adb-e7ae-4aa4-ac43-afabae33ddc9.jpg?f=32",
+          "alt": "Owner's Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/f4f8c3d1-c1d6-4c33-852b-cfc10889f329.jpg?f=32",
+          "alt": "Owner's Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/998507d8-6ee3-409d-bb05-ea4bfe3f87da.jpg?f=32",
+          "alt": "Owner's Room"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/4fe863d2-9ae7-46d9-919d-61b8a24998e5.jpg?f=32",
+          "alt": "Sunroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/3b7fdc3b-de71-408a-8862-efe5eeadea54.jpg?f=32",
+          "alt": "Sunroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/868fd15b-9c21-484b-8545-90b3b3c16a59.jpg?f=32",
+          "alt": "Sunroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/f261e229-f71e-4ef0-85b7-8bd5a921c241.jpg?f=32",
+          "alt": "Sunroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/00b9abe5-97b5-43b3-8564-026944d23bcf.jpg?f=32",
+          "alt": "Sunroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/33051b8d-ef1f-494e-8991-ae02ef51ca51.jpg?f=32",
+          "alt": "Sunroom"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/2fdd6699-6838-43ea-b8f2-0a50ed7eee80.jpg?f=32",
+          "alt": "Sunroom"
+        }
+      ],
+      "publicFacts": [
+        {
+          "question": "What are the check-in and check-out times?",
+          "answer": "Check-in time is 03:00 PM. Check-out time is 11:00 AM."
+        },
+        {
+          "question": "How many guests can stay at this property?",
+          "answer": "This property can accommodate up to 6 guests."
+        },
+        {
+          "question": "Are pets allowed?",
+          "answer": "Pets are not allowed at this property."
+        },
+        {
+          "question": "Are children welcome?",
+          "answer": "Yes, children are welcome at this property."
+        },
+        {
+          "question": "What amenities are available?",
+          "answer": "The property offers the following amenities: Parking, Parking on street, Parking option included, Accept credit card, Children welcome, Pets not allowed, Smoking not allowed, Wheelchair inaccessible, BBQ charcoal grill, Bed linen, Blow dryer, Clothes dryer, Essentials, Iron and board, Shower, Towel set, Bathtub, Washing machine, Air conditioning, Ceiling fans, Central heating, General heating, Piano, TV cable, Wireless Broadband Internet wireless, Coffee machine, Cooking utensils, Grill, Kitchen stove, Microwave, Oven, Refrigerator, Toaster, Vacuum cleaner, Carbon monoxide detector, Fire extinguisher, First aid kit, Smoke detector."
+        },
+        {
+          "question": "What is the cancellation policy for this property?",
+          "answer": "All paid prepayments are non-refundable."
+        },
+        {
+          "question": "Is a security deposit required?",
+          "answer": "A pre-authorization of 25% / USD 100.00 is held on 1 day(s) before arrival and voided on 5 day(s) after departure"
+        }
+      ],
+      "missing": []
+    },
+    "728474": {
+      "id": "728474",
+      "name": "Oilgate at Parkgate",
+      "sourceName": "Oilgate at Parkgate | 75-inch TV & Free Parking",
+      "page": "oilgate-at-parkgate.html",
+      "publicUrl": "https://oilgaterealty.com/en/oilgate-at-parkgate",
+      "description": "Completely renovated 2BR home in one of Akron’s best neighborhoods. Enjoy brand-new appliances, luxury bedding, blackout curtains, 75\" TV w/ free cable & PPV, fast Wi-Fi, smart lock entry, & peaceful vibes. Minutes from Akron's famous Swensons, Highland Square, downtown, Sand Run Metro Park and LeBron’s I Promise School. Features plush comforters, hotel-style linens, fans in every room, a luxe showerhead, deck, big yard, washer/dryer, on-site parking, and outdoor security cams for peace of mind.\n\nFor Vrbo reservations, a $100 security deposit is required to help cover damage to the property or theft of its contents. It is handled as a temporary authorization on the card used for booking, scheduled one day before check-in and subject to approval by your card issuer. The remaining authorization is scheduled for release five days after checkout. Your card issuer determines when released funds become available.",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "beds": 2,
+      "bedTypes": [
+        "1 Double bed",
+        "1 Queen bed"
+      ],
+      "maxGuests": 6,
+      "amenities": {
+        "room": [
+          "1 Bathroom",
+          "2 Bedroom",
+          "1 Living room",
+          "1 Dining-Room",
+          "1 Kitchen"
+        ],
+        "further-info": [],
+        "cooking": [
+          "Coffee machine",
+          "Cooking utensils",
+          "Dishwasher",
+          "Kitchen stove",
+          "Microwave",
+          "Oven",
+          "Refrigerator",
+          "Spices",
+          "Toaster"
+        ],
+        "entertainment": [
+          "TV (Cable)",
+          "Wireless Broadband Internet"
+        ],
+        "heating": [
+          "Air conditioning",
+          "Ceiling fans",
+          "Central heating",
+          "Heating available"
+        ],
+        "laundry": [
+          "Bathroom & Laundry",
+          "Clothes dryer",
+          "Iron & Board",
+          "Washing machine"
+        ],
+        "livingroom": [],
+        "miscellaneous": [
+          "Vacuum cleaner",
+          "Buzzer",
+          "Carbon Monoxide Detector",
+          "Security system",
+          "Smoke Detector"
+        ],
+        "outside": [],
+        "sanitary": [
+          "Hair dryer",
+          "Essentials",
+          "Shower",
+          "Towel-set",
+          "Hot Tub"
+        ],
+        "sleeping": [
+          "Bed linen",
+          "1 Double bed",
+          "1 Queen bed"
+        ],
+        "parking": [
+          "Parking available",
+          "Parking-on-street",
+          "Parking Included"
+        ]
+      },
+      "petsAllowed": false,
+      "checkin": "03:00 PM",
+      "checkout": "11:00 AM",
+      "houseRules": "1. Safety is our number one priority: For any emergencies, please call 911. For any safety hazards that may arise, please notify management immediately.\n\n2. No parties in the home: Guests are limited to 3 visitors at a time total in the home. No overnight stays are allowed unless previously approved and paid for.\n\n3. No cigarette smoking in the home.\n\n4. Quiet hours are between 10pm and 10am: Please be respectful of your neighbors.\n\n5. Be respectful the space: Please clean up after yourself.\n\n6. Park in designated areas only: Feel free to use the street or driveway for parking. The garage is not in use and please do not park on the grass.\n\n7. No pets are allowed: This property is pet-free.\n\n8. Trash and recycling: Trash and recycling day is Sunday night for pickup on Monday morning. Please ensure all trash and recycling are placed in the appropriate bins and that the bins are placed at the curb and removed at these times. Please do not park in front of the trashcans Sunday night or Monday morning.\n\n9. Use of appliances: Please use all appliances and amenities appropriately, and notify management if anything is malfunctioning.\n\n10. Check-In/Check-Out: Please adhere to the check-in and check-out times unless prior arrangements have been made. Follow all check-out instructions provided.\n\n11. No alterations to the property: Guests should not make any alterations to the property, such as rearranging furniture, without permission.\n\n12. No excessive noise: In addition to quiet hours, guests should avoid excessive noise at all times.",
+      "policies": {
+        "Payment Schedule": "100% of the total amount is due at time of reservation.Remaining balance: Due later",
+        "Cancellation Policy": "All paid prepayments are non-refundable.",
+        "Security deposit": "A pre-authorization of 25% / €89 is held on 1 day(s) before arrival and voided on 5 day(s) after departure"
+      },
+      "photos": [
+        {
+          "url": "https://l.icdbcdn.com/oh/e41da11a-c12e-47c0-aa41-ed949ff174ac.jpg?f=32",
+          "alt": "IMG 2008"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/c362b52a-c434-42f9-b522-80934efcc6a8.png?f=32",
+          "alt": "Gemini Generated Image rf1h7brf1h7brf1h"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/24bed5dc-da45-4eb5-836e-2d2412b637da.jpg?f=32",
+          "alt": "IMG_20251112_161414 (18)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/a3b299cb-cd58-49f2-a424-e52462d1b472.jpg?f=32",
+          "alt": "IMG_20251112_161413 (2)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/bdda6f52-6985-4040-bf3f-2960bdf1f7a3.jpg?f=32",
+          "alt": "IMG_20251112_161413 (4)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/2dd143e3-1119-43fb-bf1c-4ae0efa3e9a9.jpg?f=32",
+          "alt": "IMG_20251112_161414 (1)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/90ed7911-ba37-48d5-b3d6-148178e9150e.jpg?f=32",
+          "alt": "IMG_20251112_161414 (3)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/7c984e61-e394-4c96-902b-bc75bc6dfc37.jpg?f=32",
+          "alt": "IMG_20251112_161414 (4)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/83bdf594-2b95-4d56-9ed7-e8bce41d3953.jpg?f=32",
+          "alt": "IMG_20251112_161414 (5)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/ede9a28a-a2be-4ef5-bb20-3f9c5d0dea02.jpg?f=32",
+          "alt": "IMG_20251112_161414 (8)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/19d24776-242e-440a-aac4-cfdd6bf20341.jpg?f=32",
+          "alt": "IMG_20251112_161414 (10)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/b4d3a515-81f3-4d65-be5a-22773b226802.jpg?f=32",
+          "alt": "IMG_20251112_161414 (14)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/72a1cdf5-28f5-4fd4-8b08-985df49a756c.jpg?f=32",
+          "alt": "IMG_20251112_161414 (15)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/01d88f58-cf52-42f1-8990-d2a5715dcb8b.jpg?f=32",
+          "alt": "IMG_20251112_161414 (16)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/ce033605-34b0-4f9b-a5f7-9c9ffa0433f0.jpg?f=32",
+          "alt": "IMG_20251112_161414 (19)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/0c59d4a5-4a2b-4fce-be88-e7ee624d274f.jpg?f=32",
+          "alt": "IMG 2014"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/59ac73ad-1de0-4a7f-8e4b-73309daa414c.jpg?f=32",
+          "alt": "IMG_20251112_161413 (1)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/fce4f5f4-51a6-4d09-bd3a-22de6ecde021.jpg?f=32",
+          "alt": "IMG_20251112_200008 (14)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/04c88c89-c11a-4807-840c-9be19f79e035.jpg?f=32",
+          "alt": "IMG_20251112_200008 (15)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/e793cf76-2f01-483c-a629-824689a98db2.jpg?f=32",
+          "alt": "IMG_20251112_200008 (16)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/3be15ca4-c0f3-401b-9a8b-53250f9e6f79.jpg?f=32",
+          "alt": "IMG_20251112_200008 (17)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/83d6febb-824a-4392-b841-7a59e0d6e90e.jpg?f=32",
+          "alt": "IMG_20251112_200008 (18)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/e54f8b1c-cb39-4aca-9ba9-9d8ba72ec240.jpg?f=32",
+          "alt": "IMG_20251112_200008 (22)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/95fdbdb2-9952-4759-9992-1d375a5724d0.jpg?f=32",
+          "alt": "IMG_20251112_200008 (23)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/9562a522-c7c6-4b58-a041-24f63a39fa49.jpg?f=32",
+          "alt": "IMG_20251112_200008 (25)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/db7a1020-fb9c-40f6-96af-53754b7adf7f.jpg?f=32",
+          "alt": "IMG_20251112_200008 (1)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/ebf9e3bd-782d-4924-b0a5-babc71a0be6f.jpg?f=32",
+          "alt": "IMG_20251112_200008 (7)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/53073084-2b3d-4bdb-89fd-58bc7290833d.jpg?f=32",
+          "alt": "IMG_20251112_200008 (12)"
+        },
+        {
+          "url": "https://l.icdbcdn.com/oh/fac6f059-797c-42c2-a0eb-38c321ecc261.jpg?f=32",
+          "alt": "IMG_20251112_200008 (13)"
+        }
+      ],
+      "publicFacts": [
+        {
+          "question": "What are the check-in and check-out times?",
+          "answer": "Check-in time is 03:00 PM. Check-out time is 11:00 AM."
+        },
+        {
+          "question": "How many guests can stay at this property?",
+          "answer": "This property can accommodate up to 6 guests."
+        },
+        {
+          "question": "Are pets allowed?",
+          "answer": "Pets are not allowed at this property."
+        },
+        {
+          "question": "Are children welcome?",
+          "answer": "Yes, children are welcome at this property."
+        },
+        {
+          "question": "What amenities are available?",
+          "answer": "The property offers the following amenities: Parking, Parking on street, Parking option included, Accept credit card, Accessible 24/7, Children welcome, Low allergen environment, Pets not allowed, Smoking not allowed, Wheelchair accessible, Town, Bathroom and laundry room, Bed linen, Blow dryer, Clothes dryer, Essentials, Iron and board, Shower, Towel set, Bathtub, Washing machine, Air conditioning, Ceiling fans, Central heating, General heating, TV cable, Wireless Broadband Internet wireless, Coffee machine, Cooking utensils, Dishwasher, Kitchen stove, Microwave, Oven, Refrigerator, Spices, Toaster, Vacuum cleaner, Buzzer, Carbon monoxide detector, Security system, Smoke detector."
+        },
+        {
+          "question": "What is the cancellation policy for this property?",
+          "answer": "All paid prepayments are non-refundable."
+        },
+        {
+          "question": "Is a security deposit required?",
+          "answer": "A pre-authorization of 25% / USD 100.00 is held on 1 day(s) before arrival and voided on 5 day(s) after departure"
+        }
+      ],
+      "missing": [],
+      "retainedPhotos": [
+        {
+          "url": "assets/parkgate-living.webp",
+          "alt": "Parkgate living room with a cream sofa, coffee table and ceiling fan"
+        },
+        {
+          "url": "assets/parkgate-01.webp",
+          "alt": "Living room with a cream sofa, coffee table, and ceiling fan."
+        },
+        {
+          "url": "assets/parkgate-03.webp",
+          "alt": "Living room seating beside the decorative fireplace."
+        },
+        {
+          "url": "assets/parkgate-04.webp",
+          "alt": "Living area with a wall-mounted TV and window-side workspace."
+        },
+        {
+          "url": "assets/parkgate-05.webp",
+          "alt": "Tiled shower with a handheld showerhead."
+        },
+        {
+          "url": "assets/parkgate-06.webp",
+          "alt": "Bathroom vanity, mirror, and window."
+        },
+        {
+          "url": "assets/parkgate-07.webp",
+          "alt": "Bedroom with an illuminated headboard and bedside tables."
+        },
+        {
+          "url": "assets/parkgate-08.webp",
+          "alt": "Bedroom view toward the closet and doorway."
+        },
+        {
+          "url": "assets/parkgate-09.webp",
+          "alt": "Bedroom with a wall-mounted TV and ceiling fan."
+        },
+        {
+          "url": "assets/parkgate-10.webp",
+          "alt": "Bedroom with dark curtains and bedside seating."
+        },
+        {
+          "url": "assets/parkgate-11.webp",
+          "alt": "Bedroom view showing the TV, bed, and curtained windows."
+        },
+        {
+          "url": "assets/parkgate-12.webp",
+          "alt": "Side-by-side washer and dryer in the laundry area."
+        },
+        {
+          "url": "assets/parkgate-13.webp",
+          "alt": "Kitchen sink, white cabinets, and stainless-steel refrigerator."
+        },
+        {
+          "url": "assets/parkgate-14.webp",
+          "alt": "Kitchen with a range, microwave, and refrigerator."
+        },
+        {
+          "url": "assets/parkgate-15.webp",
+          "alt": "Window-side desk with a monitor and office chair."
+        },
+        {
+          "url": "assets/parkgate-16.webp",
+          "alt": "Bathroom with a vanity, toilet, and shower curtain."
+        },
+        {
+          "url": "assets/parkgate-17.webp",
+          "alt": "Dining table with bench seating beside the windows."
+        },
+        {
+          "url": "assets/parkgate-18.webp",
+          "alt": "Living room connecting the dining area and workspace."
+        },
+        {
+          "url": "assets/parkgate-19.webp",
+          "alt": "Sofa facing the TV with a workspace by the window."
+        },
+        {
+          "url": "assets/parkgate-20.webp",
+          "alt": "Bedroom with an illuminated headboard and ceiling fan."
+        },
+        {
+          "url": "assets/parkgate-21.webp",
+          "alt": "Bedroom view showing the bed and closet doors."
+        },
+        {
+          "url": "assets/parkgate-22.webp",
+          "alt": "Bedroom with bedside tables and botanical wall art."
+        },
+        {
+          "url": "assets/parkgate-23.webp",
+          "alt": "Living room view toward the TV and entry door."
+        },
+        {
+          "url": "assets/parkgate-24.webp",
+          "alt": "Workspace and wall-mounted TV along the living room wall."
+        },
+        {
+          "url": "assets/parkgate-25.webp",
+          "alt": "Bathroom overview with vanity and tub/shower."
+        },
+        {
+          "url": "assets/parkgate-26.webp",
+          "alt": "Living room seating and decorative fireplace from another angle."
+        },
+        {
+          "url": "assets/parkgate-27.webp",
+          "alt": "Bedroom overview with a ceiling fan and dark curtains."
+        },
+        {
+          "url": "assets/parkgate-28.webp",
+          "alt": "Kitchen counters, cabinets, and refrigerator from the doorway."
+        },
+        {
+          "url": "assets/parkgate-29.webp",
+          "alt": "Kitchen range, microwave, and stools by the counter."
+        }
+      ]
+    }
+  }
+}

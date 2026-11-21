@@ -1,6 +1,6 @@
 # Oilgate Vacation Rentals
 
-Static site for three real whole-unit stays in Akron, Ohio, hosted on GitHub Pages. Pepper provides listing facts and native Lodgify widgets; its Worker source is included but live chat activation is gated. See [PEPPER.md](PEPPER.md) for safety, tests, deployment and current blockers. No credentials are stored in the frontend.
+Static site for three real whole-unit stays in Akron, Ohio, hosted on GitHub Pages. Pepper provides listing facts, live chat, date-bound quotes and native Lodgify widgets through the existing Worker. See [PEPPER.md](PEPPER.md) for safety and deployment. No credentials are stored in the frontend.
 
 Booking links open existing Lodgify checkouts in USD. Current prices, deposits and cancellation terms come from Lodgify checkout or fresh request-bound quotes. Parkgate is excluded from Airbnb comparisons while suspended (source date November 16, 2026; recheck after February 5, 2027).
 
@@ -14,4 +14,10 @@ DM Sans is locally hosted under the SIL Open Font License; see assets/OFL.txt. G
 
 ## Maintenance
 
-Edit HTML, styles.css, tokens.css and pepper-knowledge.json. Relative links support the GitHub Pages project path. No site DNS/CNAME migration is configured. The Pepper Worker custom domain is separately authorized by its build specification and remains setup-gated.
+`data/properties.json` is the shared source for all four rental pages and `pepper-knowledge.json`. Run `npm run content:pull` with the existing process environment `LODGIFY_API_KEY`, then `npm run build`. The pull uses only the three approved property IDs, strips host telephone fields, and stores public listing facts rather than raw API responses. Lodgify API facts win over stale public page facts; owner-supplied cleaning and rental terms are attributed separately. Missing facts remain blank and are reported in the data file.
+
+Oakdale galleries display all 37 and 47 real Lodgify CDN photos; Parkgate retains the existing 29 local photos. Photo links open the original image. Parkgate is 2 bedrooms / 2 beds. Financial terms require current checkout verification; source deposit snapshots are not advertised as fixed amounts. The comparison boxes retain their unverified placeholders because no matching cross-channel quotes were pulled.
+
+Run `npm run design:check`, `npm test`, `npm run test:browser`, `npm run test:redteam`, `npm run test:live`, and `npm run test:content`. Set `PEPPER_SITE` to the GitHub Pages URL for live browser verification and `CONTENT_PROOF_DIR` for screenshots and proof JSON. The content verifier checks exact live HTML bytes, all gallery counts, top widget placement, expanded calendar height, phone privacy, terms, and all 113 source image URLs. Run the shared Oilgate website design checker separately when available.
+
+Relative links support the GitHub Pages project path. Pages deploys `main` at `/`. Deploy the existing Pepper Worker after rebuilding its bundled knowledge. No site domain/DNS/CNAME change is part of this release. The external Lodgify widget currently renders its controls but its vendor APIs can return HTTP 403 in automated browsers; the secure checkout link remains available. Record this separately from site-owned test results.

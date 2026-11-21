@@ -8,6 +8,13 @@ if (['603326', '603323', '728474'].includes(id)) {
   const script = document.createElement('script');
   script.src = 'https://app.lodgify.com/portable-search-bar/stable/renderPortableSearchBar.js';
   document.body.append(script);
+  const reportHeight = () => {
+    // Lodgify calendars are absolutely positioned portals, outside normal flow.
+    const bottoms = [...document.body.querySelectorAll('*')].map(el => el.getBoundingClientRect()).filter(r => r.width && r.height).map(r => r.bottom);
+    parent.postMessage({ type: 'lodgify-height', height: Math.ceil(Math.max(120, ...bottoms) + 20) }, location.origin);
+  };
+  new ResizeObserver(reportHeight).observe(root);
+  new MutationObserver(reportHeight).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'aria-expanded'] });
   // Lodgify initializes currency asynchronously; keep checkout explicitly in USD.
   const normalizeCheckout = () => root.querySelectorAll('a[href]').forEach(a => {
     const url = new URL(a.href);
