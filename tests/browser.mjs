@@ -14,7 +14,7 @@ const base = remote || `http://127.0.0.1:${server.address().port}/`;
 const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
-  await page.route('https://pepper.oilgateai.com/**', r => r.abort());
+  await page.route('https://pepper-chat.oilgaterealty.workers.dev/**', r => r.abort());
   for (const file of ['unit-1-at-oilgate-at-oakdale.html', 'unit-2-at-oilgate-at-oakdale.html', 'oilgate-at-parkgate.html']) {
     const errors = []; page.removeAllListeners('pageerror'); page.on('pageerror', e => errors.push(e.stack));
     await page.goto(new URL(file, base).href, { waitUntil: 'domcontentloaded' });

@@ -1,7 +1,7 @@
 {
   "version": "2026-11-20",
-  "liveChatEnabled": false,
-  "chatEndpoint": "https://pepper.oilgateai.com/chat",
+  "liveChatEnabled": true,
+  "chatEndpoint": "https://pepper-chat.oilgaterealty.workers.dev/chat",
   "source": "Existing Oilgate public listing pages; pet policy not supplied. Live financial terms must come from Lodgify quote.",
   "common": {
     "checkin": "Check-in is 3 PM and check-out is 11 AM, Akron local time. Contact your host to arrange arrival.",
