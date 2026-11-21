@@ -154,7 +154,7 @@ html = f"""<!doctype html>
 {COMPARE}
 <div class="stone"><section class="info" id="rental-terms" aria-labelledby="rt"><div><p class="label">Before you book</p><h2 id="rt">Rules and terms</h2><p class="lead">The minimum booking age is {ot['minimumAge']}.</p><p>{E(ot['liability'])}</p><div class="promise"><strong>{E(ot['cleaning'])}</strong>{E(ot['cleaningException'])}</div></div>
 <div>{rules_list()}</div></section></div>
-<section class="faqw" id="faq" aria-labelledby="fq"><p class="label">Good to know</p><h2 id="fq">Questions, answered</h2>{faq_list()}</section>
+<span id="questions"></span><section class="faqw" id="faq" aria-labelledby="fq"><p class="label">Good to know</p><h2 id="fq">Questions, answered</h2>{faq_list()}</section>
 </main>
 <a class="float" href="#availability"><b>★</b> Check dates</a>
 <footer id="contact">{akron_img('skyline')}<div class="wrap"><div><span class="plate">{logo('secondary')}</span><p>Whole-home stays in Akron, Ohio.</p>{social('social', icons=True)}</div>
