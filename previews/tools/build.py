@@ -39,14 +39,14 @@ a{color:var(--navy)}
 .book button{height:44px;padding:0 22px;border:0;background:var(--gold);color:var(--navy);font:600 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 .book-msg{margin:4px 0 0;font-size:13px;min-height:0}
 .hero{position:relative;min-height:88vh;display:grid;place-items:center;color:#fff;text-align:center;overflow:hidden}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,35,66,.55),rgba(1,35,66,.15) 40%,rgba(1,35,66,.6))}
 .hero .in{position:relative;z-index:1;padding:40px 20px}
 .hero .plate{display:inline-block;background:rgba(255,255,255,.94);padding:14px 22px;margin-bottom:28px}
 .hero .plate img{height:56px;width:auto}
 .hero h1{font:400 clamp(44px,7vw,92px)/1.02 var(--serif);margin:0}
 .hero p.k{font:500 13px var(--sans);letter-spacing:.34em;text-transform:uppercase;margin:22px 0 0}
-.badge{position:absolute;z-index:2;left:clamp(16px,4vw,56px);bottom:clamp(16px,4vw,56px);width:168px;height:168px;display:grid;place-items:center;text-align:center;color:#fff;background:var(--navy);
+.badge{text-decoration:none;position:absolute;z-index:2;left:clamp(16px,4vw,56px);bottom:clamp(16px,4vw,56px);width:168px;height:168px;display:grid;place-items:center;text-align:center;color:#fff;background:var(--navy);
 border-radius:50%;box-shadow:0 0 0 6px var(--navy),0 0 0 7px var(--gold)}
 .badge strong{font:400 22px/1.05 var(--serif);display:block;padding:0 18px}.badge small{display:block;font-size:11px;letter-spacing:.1em;margin-top:6px;opacity:.9}
 .float{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;gap:6px}
@@ -116,7 +116,7 @@ footer a{color:#fff}footer h2{font:500 12px var(--sans);letter-spacing:.24em;tex
 <main id="main">
 <section class="intro" aria-labelledby="welcome">{stay_img(STAYS[0],2)}
 <div><p class="k">Welcome</p><h2 id="welcome">A whole home, quietly yours.</h2>
-<p>Book an entire Oakdale unit or the whole Parkgate home. No shared walls in the living spaces, no front desk, no rush.</p>
+<p>Book an entire Oakdale unit or the whole Parkgate home. Your own kitchen and living room, no front desk, no rush.</p>
 <p class="tagline">{CLEANING}.</p><p>{CLEANING_SUB} {NEARBY}</p><a class="btn" href="#stays">See the stays</a></div>
 {stay_img(STAYS[2],2)}</section>
 <section class="rooms" id="stays" aria-labelledby="st"><header><h2 id="st">Three homes. Pick the one that fits.</h2><a class="btn" href="#book">Check dates</a></header>
@@ -125,7 +125,7 @@ footer a{color:#fff}footer h2{font:500 12px var(--sans);letter-spacing:.24em;tex
 <section class="day" aria-labelledby="dy"><h2 id="dy">A day at the house</h2><ol>
 <li><time>3:00 PM</time><div><h3>Arrive</h3><p>Check-in opens. Smart lock entry at Parkgate.</p></div></li>
 <li><time>6:00 PM</time><div><h3>Settle in</h3><p>Cook in your own full kitchen or head out to Swensons and Highland Square.</p></div></li>
-<li><time>10:00 PM</time><div><h3>Quiet hours</h3><p>Quiet hours run 10 PM to 10 AM. Blackout curtains in every bedroom.</p></div></li>
+<li><time>10:00 PM</time><div><h3>Quiet hours</h3><p>Quiet hours run 10 PM to 10 AM, out of respect for the neighbors.</p></div></li>
 <li><time>11:00 AM</time><div><h3>Check out</h3><p>Check-out by 11. No cleaning fees, unless house rules are broken.</p></div></li>
 </ol></section>
 <section class="panel" id="terms" aria-label="Compare and terms"><div class="wrap">
@@ -220,11 +220,11 @@ footer h2{font:400 26px var(--display);color:var(--gold);margin:0 0 10px;letter-
 <main id="main">
 <section class="bookbox" id="book" aria-label="Find your dates">{book_form('d2', 'Search')}</section>
 <section class="hero"><div class="frame">{stay_img(STAYS[0], loading='eager')}
-<div class="copy"><p class="k">Welcome to Oilgate Vacation Rentals</p><h1>More than a stay,<br>it's your Akron</h1><p>Three whole homes in Akron's Oakdale and Parkgate neighborhoods. Your own kitchen, your own living room, your own front door.</p>
+<div class="copy"><p class="k">Welcome to Oilgate Vacation Rentals</p><h1>More than a stay,<br>it's your Akron</h1><p>Three whole homes in Akron's Oakdale and Parkgate neighborhoods. Your own kitchen, your own living room, your own space.</p>
 <div class="acts"><a class="cta" href="#stays">Explore the stays</a><a class="cta ghost" href="#book">Check dates</a></div></div>
 <a class="oval" href="#terms"><span><b>★ ★ ★</b><strong>No cleaning<br>fees, ever</strong><small>Unless house rules are broken</small></span></a></div></section>
 <div class="marquee" aria-hidden="true"><div class="run">{run}</div></div>
-<section class="split" aria-labelledby="loc"><div><p class="k">Where locals stay</p><h2 id="loc">The whole place, all to yourself</h2><p>{NEARBY} Fast Wi-Fi, cable TV and a washer and dryer at every home, plus parking.</p><a class="cta" href="#stays">See all three</a></div>
+<section class="split" aria-labelledby="loc"><div><p class="k">Where locals stay</p><h2 id="loc">The whole place, all to yourself</h2><p>{NEARBY} Fast Wi-Fi and cable TV at every home, plus parking.</p><a class="cta" href="#stays">See all three</a></div>
 <div class="arch">{stay_img(STAYS[2],2)}{stay_img(STAYS[1],2,'small')}</div></section>
 <section class="sec" id="stays" aria-labelledby="st"><div class="head"><div><p class="k">The stays</p><h2 id="st">Pick your home base</h2></div><a class="cta" href="#book">Check dates</a></div><div class="cards">{cards}</div></section>
 <div class="band"><section class="sec two" id="compare" aria-label="Compare booking options"><div><h2>Compare booking options</h2><p>{COMPARE_INTRO}</p><p>{COMPARE_NOTE}</p></div>{compare_rows()}</section></div>
@@ -324,7 +324,7 @@ footer h2{font:600 12px var(--sans);letter-spacing:.2em;text-transform:uppercase
 <div class="bar" aria-hidden="true"></div>
 <section class="feat" aria-label="Why stay with us">
 <article>{stay_img(STAYS[2])}<div><h2>Three homes, known inside out</h2><div class="rule"></div><p>Three homes we know inside and out. {STAYS[2]['blurb']}</p></div></article>
-<article>{stay_img(STAYS[0],2)}<div><h2>No cleaning fees, ever</h2><div class="rule"></div><p>{CLEANING_SUB} That's the whole rule. The stay total you see at checkout is the one you pay.</p></div></article>
+<article>{stay_img(STAYS[0],2)}<div><h2>No cleaning fees, ever</h2><div class="rule"></div><p>{CLEANING_SUB} That's the whole rule. Check the full total for your dates in the secure Lodgify checkout.</p></div></article>
 <article>{stay_img(STAYS[1],2)}<div><h2>Room for the whole crew</h2><div class="rule"></div><p>Every home sleeps up to 6 guests. {NEARBY}</p></div></article>
 </section>
 <section class="box" aria-label="Compare and terms"><div class="wrap">
@@ -593,7 +593,7 @@ footer h2{font:400 20px var(--display);letter-spacing:.2em;color:var(--gold);mar
 <a class="skip" href="#main">Skip to content</a>
 <header class="hero"><img src="{l3[0]}" width="{l3[1]}" height="{l3[2]}" alt="{E(l3[3])}" fetchpriority="high">
 <nav aria-label="Main"><span class="plate">{logo('primary')}</span><ul><li><a href="#stays">Stays</a></li><li><a href="#day">Your stay</a></li><li><a href="#compare">Compare</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
-<div class="c"><p class="k">Akron, Ohio</p><h1>A whole home,<br>right in Akron</h1><p class="l">Three homes in Oakdale and Parkgate, booked whole, with your own kitchen, living room and front door.</p>
+<div class="c"><p class="k">Akron, Ohio</p><h1>A whole home,<br>right in Akron</h1><p class="l">Three homes in Oakdale and Parkgate, booked whole, with your own kitchen and living room.</p>
 <div class="glass" id="book">{book_form('d6', 'Check availability')}</div>
 <p class="chip"><b>★</b> {CLEANING}. {CLEANING_SUB}</p></div></header>
 <div class="marquee" aria-hidden="true"><div class="run">{run}</div></div>
@@ -602,7 +602,7 @@ footer h2{font:400 20px var(--display);letter-spacing:.2em;color:var(--gold);mar
 <div class="stone"><section class="day on-light" id="day" aria-labelledby="dy">{stay_img(STAYS[0],2)}<div><p class="label">Your stay</p><h2 id="dy">An easy Akron day</h2><ol>
 <li><time>3:00 PM</time><div><strong>Check in</strong><p>Your whole home is ready from 3.</p></div></li>
 <li><time>Evening</time><div><strong>Head out or stay in</strong><p>{NEARBY}</p></div></li>
-<li><time>10:00 PM</time><div><strong>Quiet hours</strong><p>10 PM to 10 AM. Blackout curtains in every bedroom.</p></div></li>
+<li><time>10:00 PM</time><div><strong>Quiet hours</strong><p>10 PM to 10 AM, out of respect for the neighbors.</p></div></li>
 <li><time>11:00 AM</time><div><strong>Check out</strong><p>{CLEANING}, unless house rules are broken.</p></div></li></ol></div></section></div>
 <section class="info on-light" aria-label="Compare and terms"><div id="compare"><p class="label">Book smart</p><h2>Compare booking options</h2><p>{COMPARE_INTRO}</p>{compare_rows()}<p class="note">{COMPARE_NOTE}</p></div>
 <div id="terms"><p class="label">Before you book</p><h2>Rules and terms</h2>{rules_list()}<div class="promise"><strong>{CLEANING}</strong>{CLEANING_SUB}</div></div></section>

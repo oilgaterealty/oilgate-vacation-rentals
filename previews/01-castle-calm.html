@@ -31,14 +31,14 @@ a{color:var(--navy)}
 .book button{height:44px;padding:0 22px;border:0;background:var(--gold);color:var(--navy);font:600 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 .book-msg{margin:4px 0 0;font-size:13px;min-height:0}
 .hero{position:relative;min-height:88vh;display:grid;place-items:center;color:#fff;text-align:center;overflow:hidden}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(1,35,66,.55),rgba(1,35,66,.15) 40%,rgba(1,35,66,.6))}
 .hero .in{position:relative;z-index:1;padding:40px 20px}
 .hero .plate{display:inline-block;background:rgba(255,255,255,.94);padding:14px 22px;margin-bottom:28px}
 .hero .plate img{height:56px;width:auto}
 .hero h1{font:400 clamp(44px,7vw,92px)/1.02 var(--serif);margin:0}
 .hero p.k{font:500 13px var(--sans);letter-spacing:.34em;text-transform:uppercase;margin:22px 0 0}
-.badge{position:absolute;z-index:2;left:clamp(16px,4vw,56px);bottom:clamp(16px,4vw,56px);width:168px;height:168px;display:grid;place-items:center;text-align:center;color:#fff;background:var(--navy);
+.badge{text-decoration:none;position:absolute;z-index:2;left:clamp(16px,4vw,56px);bottom:clamp(16px,4vw,56px);width:168px;height:168px;display:grid;place-items:center;text-align:center;color:#fff;background:var(--navy);
 border-radius:50%;box-shadow:0 0 0 6px var(--navy),0 0 0 7px var(--gold)}
 .badge strong{font:400 22px/1.05 var(--serif);display:block;padding:0 18px}.badge small{display:block;font-size:11px;letter-spacing:.1em;margin-top:6px;opacity:.9}
 .float{position:fixed;right:16px;bottom:16px;z-index:20;display:flex;gap:6px}
@@ -116,7 +116,7 @@ footer a{color:#fff}footer h2{font:500 12px var(--sans);letter-spacing:.24em;tex
 <main id="main">
 <section class="intro" aria-labelledby="welcome"><img src="../samples/img/u1-06.webp" width="1050" height="1400" alt="Unit 1 living room with a wood coffered ceiling and a TV stand" loading="lazy" decoding="async">
 <div><p class="k">Welcome</p><h2 id="welcome">A whole home, quietly yours.</h2>
-<p>Book an entire Oakdale unit or the whole Parkgate home. No shared walls in the living spaces, no front desk, no rush.</p>
+<p>Book an entire Oakdale unit or the whole Parkgate home. Your own kitchen and living room, no front desk, no rush.</p>
 <p class="tagline">No cleaning fees, ever.</p><p>Unless house rules are broken. Minutes from Swensons, Highland Square, downtown Akron and Sand Run Metro Park.</p><a class="btn" href="#stays">See the stays</a></div>
 <img src="../samples/img/parkgate-14.webp" width="900" height="1200" alt="Parkgate kitchen with a range, microwave and refrigerator" loading="lazy" decoding="async"></section>
 <section class="rooms" id="stays" aria-labelledby="st"><header><h2 id="st">Three homes. Pick the one that fits.</h2><a class="btn" href="#book">Check dates</a></header>
@@ -125,7 +125,7 @@ footer a{color:#fff}footer h2{font:500 12px var(--sans);letter-spacing:.24em;tex
 <section class="day" aria-labelledby="dy"><h2 id="dy">A day at the house</h2><ol>
 <li><time>3:00 PM</time><div><h3>Arrive</h3><p>Check-in opens. Smart lock entry at Parkgate.</p></div></li>
 <li><time>6:00 PM</time><div><h3>Settle in</h3><p>Cook in your own full kitchen or head out to Swensons and Highland Square.</p></div></li>
-<li><time>10:00 PM</time><div><h3>Quiet hours</h3><p>Quiet hours run 10 PM to 10 AM. Blackout curtains in every bedroom.</p></div></li>
+<li><time>10:00 PM</time><div><h3>Quiet hours</h3><p>Quiet hours run 10 PM to 10 AM, out of respect for the neighbors.</p></div></li>
 <li><time>11:00 AM</time><div><h3>Check out</h3><p>Check-out by 11. No cleaning fees, unless house rules are broken.</p></div></li>
 </ol></section>
 <section class="panel" id="terms" aria-label="Compare and terms"><div class="wrap">
