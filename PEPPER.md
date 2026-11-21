@@ -1,6 +1,6 @@
 # Pepper guest assistant
 
-Pepper's static quick answers and Lodgify widgets are available independently of the Worker. `pepper-knowledge.json` is the shared source for listing facts; unknown pet policies refer guests to the host. Chat activation is explicitly disabled until the backend release gates below are satisfied.
+Pepper's static quick answers and Lodgify widgets are available independently of the Worker. `pepper-knowledge.json` is the shared source for listing facts; unknown pet policies refer guests to the host. Chat is active at `https://pepper-chat.oilgaterealty.workers.dev/chat`, restricted to the GitHub Pages origin. Live financial data remains blocked as described below.
 
 ## Safety design
 
@@ -19,7 +19,7 @@ Verified Lodgify mapping: Oakdale 1 `603326` / room `670117`; Oakdale 2 `603323`
 
 Cloudflare lists both requested models as available on Workers Free: https://developers.cloudflare.com/changelog/post/2026-07-28-models-require-workers-paid/ . No paid models, billing changes, or upgrades are authorized. Free Workers AI allowance can exhaust; the static layer remains available. The eight-second timeout cannot cancel an already dispatched Workers AI binding operation, so a timed-out inference may finish within the free quota.
 
-The configured Workers Rate Limiting binding applies approximately ten requests per minute to session plus IP and separately to IP to resist session resets. Cloudflare documents that limits are approximate and local to a location, not a global accounting system: https://developers.cloudflare.com/workers/runtime-apis/bindings/rate-limit/ . Binding absence/failure disables backend replies, rather than silently substituting an ineffective process-local counter. Local Wrangler configuration validation is verified; actual free-account deployment support remains a release gate.
+The configured Workers Rate Limiting binding applies approximately ten requests per minute to session plus IP and separately to IP to resist session resets. Cloudflare documents that limits are approximate and local to a location, not a global accounting system: https://developers.cloudflare.com/workers/runtime-apis/bindings/rate-limit/ . Binding absence/failure disables backend replies, rather than silently substituting an ineffective process-local counter. The binding deployed successfully without a paid upgrade.
 
 Known Gemini terms risk: Google describes use as professional/business purposes, "not for consumer use." Automatic Cloudflare failover does not resolve terms suitability by itself. Free Gemini is also skipped for EEA/UK/Swiss visitors according to request country. Review permitted audience/regions before adding the key. https://aistudio.google.com/docs/terms
 
@@ -31,12 +31,12 @@ Known Gemini terms risk: Google describes use as professional/business purposes,
 
 The 18-case promptfoo suite is a curated adversarial regression against the actual handler with forced Gemini failure and hostile mocked model output. It uses no paid generation or grading. It does not claim live model red-team coverage. CI runs it on pushes, pull requests, manual requests and every Monday at 10:17 UTC. Browser checks force chat outage, verify all taps across all rentals, native widget checkout routing and USD, mobile overflow and own-script errors. Third-party widget network errors are reported separately.
 
-## Backend activation checklist
+## Deployment and current acceptance
 
-1. Confirm the account is Workers Free with billing disabled; existing OAuth billing-read calls return 403.
-2. Make the `oilgateai.com` Cloudflare zone accessible to the deployment identity, or provide its authorized routing setup. The current identity lists no matching zone. Do not migrate nameservers or alter unrelated DNS.
-3. Complete an independent review of the final backend artifact. The attempted reviewer was blocked before reading files by `hook_task_binding_unproven`; no PASS exists.
-4. Deploy with `npm run deploy:worker`. Add `LODGIFY_KEY` and, when terms and audience are suitable, `GEMINI_KEY` using Worker secrets, never frontend files. Never echo values. Home lab stays off.
-5. Verify the real endpoint, quote/availability on all rentals, rate limiting and live provider failover. Only then set `liveChatEnabled` to true, run checks, commit and push main.
+Deploy with `npm run deploy:worker`. Install `GEMINI_API_KEY` and `LODGIFY_KEY` with `wrangler secret put --config worker/wrangler.jsonc`; pipe trimmed values from protected sources without echoing them. No DNS, nameserver, account-plan or billing changes are part of this deployment. The owner directed workers.dev deployment and waived the blocked reviewer as a launch gate on November 20. Billing-read HTTP 403 remains informational. Home lab stays off.
 
-The static fallback release is useful but does not constitute live backend acceptance. Missing Gemini key, custom-domain access, verified free account, independent review and live model acceptance must be reported separately.
+Gemini primary inference and real Cloudflare Gemma failover were verified. Gemini thinking is disabled for classification; Cloudflare models receive enough completion budget to reach their final intent. Provider reasoning is never rendered. Worker fetch uses manual redirects and rejects non-success status so API credentials are never forwarded to a redirected host.
+
+**Live Lodgify price acceptance is blocked:** Lodgify returns HTTP 429 to this Worker's Cloudflare egress IP, identifying it as an unregistered API user requesting data for multiple Lodgify end users. Direct PC quote and availability reads with the same secret succeed on all three rentals. Resolve through Lodgify's supported API registration/IP process; do not route around the block. Until resolved, Pepper shows checkout guidance and no estimated or stale price.
+
+Run `node scripts/verify-live-chat.mjs` to check the published site, natural-language AI reply, all three property-page quotes, contact removal and CORS. Optional `PEPPER_PROOF_DIR` stores public test replies and screenshots. Any unavailable live quote makes this verification exit nonzero after collecting evidence for all properties. The launch is not fully accepted until it passes.

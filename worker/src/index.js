@@ -21,7 +21,7 @@ export async function aiIntent(message, propertyId, env, fetcher = fetch) {
   if ((env.GEMINI_API_KEY || env.GEMINI_KEY) && env.GEMINI_REGION_ALLOWED !== 'false') {
     try {
       const raw = await bounded(async signal => {
-        const r = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${env.GEMINI_MODEL || 'gemini-2.5-flash'}:generateContent`, { method: 'POST', signal, headers: { 'Content-Type': 'application/json', 'x-goog-api-key': env.GEMINI_API_KEY || env.GEMINI_KEY }, body: JSON.stringify({ systemInstruction: { parts: [{ text: system }] }, contents: [{ role: 'user', parts: [{ text: message }] }], generationConfig: { maxOutputTokens: 64, temperature: 0 } }) });
+        const r = await fetcher(`https://generativelanguage.googleapis.com/v1beta/models/${env.GEMINI_MODEL || 'gemini-2.5-flash'}:generateContent`, { method: 'POST', signal, headers: { 'Content-Type': 'application/json', 'x-goog-api-key': env.GEMINI_API_KEY || env.GEMINI_KEY }, body: JSON.stringify({ systemInstruction: { parts: [{ text: system }] }, contents: [{ role: 'user', parts: [{ text: message }] }], generationConfig: { maxOutputTokens: 128, temperature: 0, thinkingConfig: { thinkingBudget: 0 } } }) });
         if (!r.ok) throw new Error('provider unavailable');
         return (await r.json()).candidates?.[0]?.content?.parts?.map(p => p.text || '').join('');
       });
@@ -31,7 +31,9 @@ export async function aiIntent(message, propertyId, env, fetcher = fetch) {
   for (const model of CF_MODELS) {
     if (!env.AI) break;
     try {
-      const raw = await bounded(() => env.AI.run(model, { messages, max_tokens: 64, temperature: 0 }));
+      // These reasoning models spend completion tokens before producing content.
+      // Leave enough budget for a final intent; never expose their reasoning.
+      const raw = await bounded(() => env.AI.run(model, { messages, max_tokens: 512, temperature: 0 }));
       return { intent: parseIntent(raw.response ?? raw.choices?.[0]?.message?.content), provider: model };
     } catch { /* Try the next free model. */ }
   }
@@ -40,7 +42,7 @@ export async function aiIntent(message, propertyId, env, fetcher = fetch) {
       const url = new URL(env.HOME_LAB_URL);
       if (url.protocol !== 'https:') throw new Error('https required');
       const raw = await bounded(async signal => {
-        const r = await fetcher(url, { method: 'POST', redirect: 'error', signal, headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${env.HOME_LAB_KEY}` }, body: JSON.stringify({ model: env.HOME_LAB_MODEL, messages, max_tokens: 64, temperature: 0 }) });
+        const r = await fetcher(url, { method: 'POST', redirect: 'manual', signal, headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${env.HOME_LAB_KEY}` }, body: JSON.stringify({ model: env.HOME_LAB_MODEL, messages, max_tokens: 64, temperature: 0 }) });
         if (!r.ok) throw new Error('home unavailable');
         return (await r.json()).choices?.[0]?.message?.content;
       }, 15000);
@@ -61,8 +63,8 @@ export async function lodgifyGet(path, params, env, fetcher = fetch) {
   return bounded(async signal => {
     const url = new URL(path, API);
     url.search = new URLSearchParams(params).toString();
-    const r = await fetcher(url, { method: 'GET', redirect: 'error', signal, headers: { 'X-ApiKey': env.LODGIFY_KEY, Accept: 'application/json' } });
-    if (!r.ok) throw new Error('Lodgify unavailable');
+    const r = await fetcher(url, { method: 'GET', redirect: 'manual', signal, headers: { 'X-ApiKey': env.LODGIFY_KEY, Accept: 'application/json', 'User-Agent': 'Oilgate-Pepper/1.0' } });
+    if (!r.ok) { console.warn('Pepper Lodgify HTTP status', r.status); throw new Error('Lodgify unavailable'); }
     return r.json();
   });
 }
@@ -151,7 +153,10 @@ export function createWorker(fetcher = fetch) {
       let result = b.intent ? { intent: detected === 'contact' ? 'contact' : b.intent, provider: 'no-ai' } : detected === 'contact' ? { intent: 'contact', provider: 'no-ai' } : await aiIntent(b.message, b.propertyId, { ...env, GEMINI_REGION_ALLOWED: ['GB', 'CH', 'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE'].includes(request.cf?.country) ? 'false' : env.GEMINI_REGION_ALLOWED }, fetcher);
       if (detected === 'price' || detected === 'availability') result.intent = detected;
       let live = null;
-      if (['price', 'availability'].includes(result.intent)) { try { live = await liveData({ ...b, intent: result.intent }, env, fetcher); } catch { /* No estimates or stale financial data. */ } }
+      if (['price', 'availability'].includes(result.intent)) { try { live = await liveData({ ...b, intent: result.intent }, env, fetcher); } catch (error) {
+        const known = ['Lodgify not configured', 'Lodgify unavailable', 'ambiguous quote', 'quote context mismatch', 'unverified currency', 'unrecognized quote', 'timeout'];
+        console.warn('Pepper live data unavailable', known.includes(error.message) ? error.message : 'upstream response invalid');
+      } }
       return respond({ reply: safeReply(answer(knowledge, b.propertyId, result.intent, live), live?.allowedAmounts || []), intent: result.intent, provider: result.provider, live: !!live });
     } catch { return respond({ reply: SAFE, provider: 'no-ai' }, 400); }
   } };

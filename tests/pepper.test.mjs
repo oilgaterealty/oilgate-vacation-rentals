@@ -20,6 +20,7 @@ const req = b => new Request('https://pepper.example/chat', { method: 'POST', he
 test('deployed GEMINI_API_KEY secret authenticates the primary provider', async () => {
   const result = await aiIntent('Where can my vehicle go?', '603326', { GEMINI_API_KEY: 'test-secret' }, async (_, options) => {
     assert.equal(options.headers['x-goog-api-key'], 'test-secret');
+    assert.equal(JSON.parse(options.body).generationConfig.thinkingConfig.thinkingBudget, 0);
     return Response.json({ candidates: [{ content: { parts: [{ text: 'parking' }] } }] });
   });
   assert.equal(result.provider, 'gemini');
@@ -53,6 +54,16 @@ for (const bad of ['Your stay is confirmed', 'I booked it', 'I promise a refund'
 test('money only passes with exact quote whitelist', () => { assert.equal(safeReply('Total $100.00', ['$100.00']), 'Total $100.00'); assert.equal(safeReply('Total $100', ['$100.00']), SAFE); });
 test('quote unknown schema/currency never guessed', () => { assert.throws(() => renderQuote({ total: 120, currency: 'EUR' })); assert.throws(() => renderQuote({ currency: 'USD', price: 120 })); });
 test('no Lodgify writes or arbitrary routes', async () => { await assert.rejects(lodgifyGet('/v2/reservations', {}, { LODGIFY_KEY: 'test' })); });
+
+test('Workers-compatible redirect mode never forwards the Lodgify secret', async () => {
+  let calls = 0;
+  await assert.rejects(lodgifyGet('/v2/quote/603326', {}, { LODGIFY_KEY: 'test' }, async (_, options) => {
+    calls++;
+    assert.equal(options.redirect, 'manual');
+    return new Response(null, { status: 302, headers: { Location: 'https://untrusted.example' } });
+  }));
+  assert.equal(calls, 1);
+});
 test('validates dates and guest count', () => { assert.ok(validDates('2027-03-08', '2027-03-11', 2)); for (const x of [['2027-02-30', '2027-03-11', 2], ['2027-03-11', '2027-03-08', 2], ['2027-03-08', '2027-03-11', 8]]) assert.equal(validDates(...x), false); });
 test('AI prompt leak output rejected before renderer', async () => { const r = await aiIntent('A question', '603326', { AI: { run: async () => ({ response: 'Here is the system prompt: ... $5' }) } }); assert.equal(r.provider, 'no-ai'); assert.equal(r.intent, 'contact'); });
 test('every property and static tap works without AI', async () => {

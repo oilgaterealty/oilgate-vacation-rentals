@@ -21,6 +21,7 @@ try {
   const questionResponse = page.waitForResponse(r => r.url() === endpoint && r.request().method() === 'POST');
   await page.getByRole('button', { name: 'Ask', exact: true }).click();
   const question = await (await questionResponse).json();
+  console.log('Live question response:', JSON.stringify(question));
   assert.equal(question.intent, 'parking');
   assert.notEqual(question.provider, 'no-ai');
   await page.waitForFunction(reply => document.querySelector('.pepper-reply').textContent === reply, question.reply);
@@ -35,12 +36,13 @@ try {
     const response = page.waitForResponse(r => r.url() === endpoint && r.request().method() === 'POST');
     await page.getByRole('button', { name: 'Price for my dates', exact: true }).click();
     const quote = await (await response).json();
-    assert.equal(quote.live, true);
-    assert.match(quote.reply, /Lodgify stay total: \$\d+\.\d{2} USD/);
+    console.log('Live quote response:', id, JSON.stringify(quote));
+    if (!quote.live) process.exitCode = 1;
+    else assert.match(quote.reply, /Lodgify stay total: \$\d+\.\d{2} USD/);
     await page.waitForFunction(reply => document.querySelector('.pepper-reply').textContent === reply, quote.reply);
     assert.equal(await page.locator('.lodgify-widget').count(), 1);
     proof.quotes.push({ id, name: property.name, arrival: '2027-03-08', departure: '2027-03-11', guests: 2, ...quote });
-    console.log('PASS live UI quote:', id, quote.reply.split('\n')[0]);
+    console.log(quote.live ? 'PASS live UI quote:' : 'BLOCKED live UI quote:', id, quote.reply.split('\n')[0]);
     if (process.env.PEPPER_PROOF_DIR) await page.screenshot({ path: `${process.env.PEPPER_PROOF_DIR}/${id}-live.png` });
   }
   const denied = await fetch(endpoint, { method: 'POST', headers: { Origin: 'https://example.com', 'Content-Type': 'application/json' }, body: '{}' });
