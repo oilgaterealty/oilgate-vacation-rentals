@@ -14,7 +14,7 @@ Job: six full OVR homepage designs on one preview page (first real run of the Oi
 
 ## Commits (main, previews/ only)
 - 989cbed: six designs, preview page, research, tools.
-- Second commit: copy fixes (logo CSS on 1, removed claims not in the listing data), HANDOFF.md, WAKE.md. See `git log -- previews`.
+- c4cad1a: copy fixes (logo CSS on 1, removed claims not in the listing data), HANDOFF.md, WAKE.md. See `git log -- previews`.
 - Live homepage blob `index.html` = dd700094348469bf8b42bc38294b230debf1e737 before and after both pushes.
 
 ## Checks run
@@ -24,9 +24,9 @@ Job: six full OVR homepage designs on one preview page (first real run of the Oi
 - Viewed live in a browser: all six designs at 1440 wide, preview page at 500 wide.
 
 ## Time
-- Start: 14:08 UTC, Nov 21 2026 (thread start; earlier research time is in the same session).
-- End: see the final report (about 14:35 UTC).
-- Total: about 30 minutes in this pass on top of the earlier build in the same session.
+- Start: 14:08 UTC, Nov 21 2026.
+- End: 14:30 UTC, Nov 21 2026 (second push deployed and checked).
+- Total: 22 minutes.
 
 ## Where time was lost
 - Reference sites: cookie and booking popups inside iframes the automation browser can't close.
