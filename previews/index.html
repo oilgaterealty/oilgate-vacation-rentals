@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>OVR homepage previews · six designs</title>
+<meta name="description" content="Six homepage design previews for Oilgate Vacation Rentals, each with a desktop and a phone view.">
+<style>
+:root{--navy:#012342;--gold:#FEA802;--ink:#14202e;--muted:#5b6673;--line:#e3e6ea;--bg:#f4f5f7}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+header.top{background:var(--navy);color:#fff;padding:28px 16px 24px}
+header.top .w{max-width:1280px;margin:0 auto;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+header.top .plate{background:#fff;border-radius:10px;padding:8px 12px;display:inline-block}
+header.top .plate img{height:40px;width:auto;display:block}
+header.top h1{margin:0;font-size:clamp(22px,4vw,32px);line-height:1.15}
+header.top p{margin:4px 0 0;opacity:.88;max-width:62ch}
+nav.jump{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
+nav.jump .w{max-width:1280px;margin:0 auto;padding:8px 16px;display:flex;gap:8px}
+nav.jump a{display:inline-block;padding:8px 12px;border-radius:999px;background:var(--bg);text-decoration:none;font-size:14px;font-weight:600}
+main{max-width:1280px;margin:0 auto;padding:16px}
+.design{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin:18px 0 28px;scroll-margin-top:64px}
+.design header{display:flex;justify-content:space-between;gap:12px;align-items:start;flex-wrap:wrap;margin-bottom:14px}
+.num{display:inline-block;background:var(--gold);color:var(--navy);font-weight:800;border-radius:8px;padding:2px 9px;margin-right:8px}
+.design h2{margin:0;font-size:22px}
+.ref{margin:6px 0 0;color:var(--muted);font-size:15px}
+.what{margin:6px 0 0;font-size:15px;max-width:72ch}
+.open{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:10px;white-space:nowrap}
+.frames{display:grid;grid-template-columns:1fr 300px;gap:18px;align-items:start}
+.frame{margin:0}
+.frame figcaption{font-size:13px;color:var(--muted);margin-bottom:6px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.screen{position:relative;overflow:hidden;background:#dde1e6;border:1px solid var(--line)}
+.desk .screen{border-radius:10px 10px 6px 6px;border-top:22px solid #2a313a}
+.phone .screen{border-radius:28px;border:10px solid #1d232b;max-width:300px}
+.screen iframe{position:absolute;top:0;left:0;border:0;transform-origin:0 0;background:#fff}
+.screen .ld{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px}
+footer{max-width:1280px;margin:0 auto;padding:8px 16px 40px;color:var(--muted);font-size:14px}
+@media (max-width:820px){.frames{grid-template-columns:1fr}.phone .screen{margin:0 auto;width:min(78vw,300px)}.phone figcaption{text-align:center}.open{width:100%;text-align:center}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="w"><span class="plate"><img src="img/ovr-primary.webp" width="720" height="181" alt="Oilgate Vacation Rentals"></span>
+<div><h1>Six homepage designs</h1><p>Each one is a full, working homepage with real stays, real photos and a live date search. Scroll inside a frame to look around, or open the full page.</p></div></div></header>
+<nav class="jump" aria-label="Jump to a design"><div class="w">
+<a href="#d1">1 Castle Calm</a><a href="#d2">2 Rubber City Club</a><a href="#d3">3 Key Stay</a><a href="#d4">4 Akron Linked</a><a href="#d5">5 Akron Photo</a><a href="#d6">6 Signature</a>
+</div></nav>
+<main>
+<!-- designs are filled in below from the DESIGNS list -->
+<div id="list"></div>
+<noscript><ul>
+<li><a href="01-castle-calm.html">1 Castle Calm</a></li><li><a href="02-rubber-city-club.html">2 Rubber City Club</a></li><li><a href="03-key-stay.html">3 Key Stay</a></li><li><a href="04-akron-linked.html">4 Akron Linked</a></li><li><a href="05-akron-photo.html">5 Akron Photo</a></li><li><a href="06-oilgate-signature.html">6 Oilgate Signature</a></li>
+</ul></noscript>
+</main>
+<footer><p>Preview only, not the live site. Akron photos are free-licensed from Wikimedia Commons (credits on each page). Research notes are in <a href="research/">research/</a>.</p></footer>
+<script>
+var DESIGNS = [
+  {id:'d1', file:'01-castle-calm.html', name:'Castle Calm', ref:'Schlosshotel Kitzbühel', refUrl:'https://www.awwwards.com/sites/schlosshotel-kitzbuhel', what:'Quiet luxury: full-photo hero, serif wordmark, stays slider with a 1 / 3 counter, floating Book and Enquire buttons, a day-at-the-house timeline.'},
+  {id:'d2', file:'02-rubber-city-club.html', name:'Rubber City Club', ref:'Club Charlestown', refUrl:'https://www.awwwards.com/sites/club-charlestown', what:'Bold and friendly: utility bar, rounded inset hero with huge condensed caps, oval badge, scrolling marquee, arch-shaped photos.'},
+  {id:'d3', file:'03-key-stay.html', name:'Key Stay', ref:'Key', refUrl:'https://www.awwwards.com/sites/key', what:'Booking-first: promo strip, serif headline over a full photo, inline search bar that follows you down the page, portrait cards with gold ribbons.'},
+  {id:'d4', file:'04-akron-linked.html', name:'Akron Linked', ref:'LaVante’s Akron theme on oilgatelinks.com', refUrl:'https://oilgatelinks.com/app', what:'Akron city photo behind everything, deep navy wash, centered white type, glass cards and a social-icon row.'},
+  {id:'d5', file:'05-akron-photo.html', name:'Akron Photo', ref:'Adobe Stock “akron ohio” mood, free photos only', refUrl:'', what:'Photo-forward editorial: edge-to-edge Akron photography, a photo mosaic, heavy grotesk type, credits on every photo.'},
+  {id:'d6', file:'06-oilgate-signature.html', name:'Oilgate Signature', ref:'Best of 1, 2 and 3 with the imagery of 4', refUrl:'', what:'Key’s search bar and ribbon cards, Schlosshotel’s calm timeline and floating button, Club Charlestown’s marquee, over a navy-washed Akron photo with a glass card.'}
+];
+var list = document.getElementById('list');
+DESIGNS.forEach(function (d, i) {
+  var s = document.createElement('section');
+  s.className = 'design'; s.id = d.id; s.setAttribute('aria-labelledby', d.id + '-h');
+  var ref = d.refUrl ? '<a href="' + d.refUrl + '" rel="noopener" target="_blank">' + d.ref + '</a>' : d.ref;
+  s.innerHTML =
+    '<header><div><h2 id="' + d.id + '-h"><span class="num">' + (i + 1) + '</span>' + d.name + '</h2>' +
+    '<p class="ref">Based on: ' + ref + '</p><p class="what">' + d.what + '</p></div>' +
+    '<a class="open" href="' + d.file + '">Open full page →</a></header>' +
+    '<div class="frames">' +
+    '<figure class="frame desk"><figcaption>Desktop · 1280 wide</figcaption><div class="screen" data-w="1280" data-h="800"><span class="ld">Loading…</span>' +
+    '<iframe src="' + d.file + '" title="' + d.name + ' desktop view" loading="lazy" width="1280" height="800"></iframe></div></figure>' +
+    '<figure class="frame phone"><figcaption>Phone · 390 wide</figcaption><div class="screen" data-w="390" data-h="844"><span class="ld">Loading…</span>' +
+    '<iframe src="' + d.file + '" title="' + d.name + ' phone view" loading="lazy" width="390" height="844"></iframe></div></figure>' +
+    '</div>';
+  list.appendChild(s);
+});
+// Scale each iframe to fit its frame while keeping the true desktop or phone viewport.
+function fit(screen) {
+  var w = +screen.dataset.w, h = +screen.dataset.h, box = screen.clientWidth;
+  if (!box) return;
+  var k = box / w;
+  screen.style.height = Math.round(h * k) + 'px';
+  var f = screen.querySelector('iframe');
+  f.style.width = w + 'px'; f.style.height = h + 'px'; f.style.transform = 'scale(' + k + ')';
+}
+var screens = document.querySelectorAll('.screen');
+if ('ResizeObserver' in window) {
+  var ro = new ResizeObserver(function (es) { es.forEach(function (e) { fit(e.target); }); });
+  screens.forEach(function (s) { ro.observe(s); });
+} else {
+  screens.forEach(fit); window.addEventListener('resize', function () { screens.forEach(fit); });
+}
+screens.forEach(function (s) { s.querySelector('iframe').addEventListener('load', function () { var l = s.querySelector('.ld'); if (l) l.remove(); }); });
+</script>
+</body>
+</html>
