@@ -48,3 +48,5 @@ LaVante asked for design 6 over the real site.
 - Carried over from the old page: the real Lodgify date widget and stay picker (property-ui.js), the "Open secure Lodgify checkout" link, the owner's comparison box word for word, the rental terms (18+, liability), Pepper guest assistant, title, description and og tags, favicon, email and social links.
 - `scripts/build-properties.mjs` no longer overwrites index.html, so a content rebuild won't bring the old homepage back.
 - Repo tests: `npm test` 39 of 39 pass, including the homepage content test.
+
+Follow-ups (Nov 21): 6f13937 lifts the "Check dates" button above Pepper on phones (they overlapped at 500px). 19b4287 adds a #questions anchor so stay pages' "Good to know" links still land on the homepage FAQ. Live checks at 1440 and 500 wide: page loads, Lodgify widget loads, stay picker switches widget and checkout link (Parkgate -> 728474), three stays show, Parkgate stay page still loads. CI "Pepper safety and failover" passed on 21485a2.
