@@ -16,6 +16,14 @@ test('Pepper never relays phone numbers in any common format', () => {
 });
 const env = () => ({ PEPPER_LIMIT: { limit: async () => ({ success: true }) } });
 const req = b => new Request('https://pepper.example/chat', { method: 'POST', headers: { Origin: 'https://oilgaterealty.github.io', 'Content-Type': 'application/json', 'CF-Connecting-IP': '192.0.2.1' }, body: JSON.stringify({ propertyId: '603326', session: key, message: '', ...b }) });
+
+test('deployed GEMINI_API_KEY secret authenticates the primary provider', async () => {
+  const result = await aiIntent('Where can my vehicle go?', '603326', { GEMINI_API_KEY: 'test-secret' }, async (_, options) => {
+    assert.equal(options.headers['x-goog-api-key'], 'test-secret');
+    return Response.json({ candidates: [{ content: { parts: [{ text: 'parking' }] } }] });
+  });
+  assert.equal(result.provider, 'gemini');
+});
 test('Gemini quota/error -> Gemma -> GLM in exact order', async () => {
   const calls = [];
   const e = { GEMINI_KEY: 'test', AI: { run: async model => { calls.push(model); if (model === CF_MODELS[0]) throw Error(); return { response: 'parking' }; } } };
