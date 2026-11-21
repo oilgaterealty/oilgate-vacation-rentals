@@ -40,3 +40,11 @@ Job: six full OVR homepage designs on one preview page (first real run of the Oi
   `powershell -File C:\Users\vtae4\.oilgate\wake\wake-bot.ps1 -Bot pepper -AgentId 9a9d43c9-c0f7-4a93-b0fb-fbdc3cd626e2 -Job "OVR design previews v2" -File <job>\WAKE.md`
 - Bridge photo for design 4 not found in the repo; used the Lock 3 canal photo instead.
 - Design 5 has no Adobe Stock link (no verified URL); it uses free Wikimedia Commons photos with credits.
+
+## Update: design 6 is now the live homepage (Nov 21, 15:4x UTC)
+LaVante asked for design 6 over the real site.
+- Old homepage saved at `backup/index-2026-11-21.html`. Roll back: `git show <this commit>~1:index.html > index.html`, or copy the backup over index.html, then commit and push.
+- New homepage is built by `python3 scripts/build-home.py` (design 6 layout, real content from data/properties.json).
+- Carried over from the old page: the real Lodgify date widget and stay picker (property-ui.js), the "Open secure Lodgify checkout" link, the owner's comparison box word for word, the rental terms (18+, liability), Pepper guest assistant, title, description and og tags, favicon, email and social links.
+- `scripts/build-properties.mjs` no longer overwrites index.html, so a content rebuild won't bring the old homepage back.
+- Repo tests: `npm test` 39 of 39 pass, including the homepage content test.
