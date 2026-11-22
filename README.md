@@ -21,3 +21,9 @@ Oakdale galleries display all 37 and 47 real Lodgify CDN photos; Parkgate retain
 Run `npm run design:check`, `npm test`, `npm run test:browser`, `npm run test:redteam`, `npm run test:live`, and `npm run test:content`. Set `PEPPER_SITE` to the GitHub Pages URL for live browser verification and `CONTENT_PROOF_DIR` for screenshots and proof JSON. The content verifier checks exact live HTML bytes, all gallery counts, top widget placement, expanded calendar height, phone privacy, terms, and all 113 source image URLs. Run the shared Oilgate website design checker separately when available.
 
 Relative links support the GitHub Pages project path. Pages deploys `main` at `/`. Deploy the existing Pepper Worker after rebuilding its bundled knowledge. No site domain/DNS/CNAME change is part of this release. The external Lodgify widget currently renders its controls but its vendor APIs can return HTTP 403 in automated browsers; the secure checkout link remains available. Record this separately from site-owned test results.
+
+## Oilgate Signature v3 (preview only)
+
+`npm run build` generates the six pages under `v3-preview/`. It does not rewrite the live pages. Parkgate capacity in this preview is three bedrooms, two queen beds and one full bed, one bath, up to six guests. Oakdale capacity was rechecked against the booking provider.
+
+`python3 scripts/prices/collect.py` refreshes only the public comparison snapshot. Set `LODGIFY_API_KEY` as a GitHub Actions repository secret for the scheduled direct data read. External listings without a verifiable dated USD offer are left empty. Never add keys or raw responses to Git. Concierge is deterministic unless a separately deployed preview Worker is explicitly configured.

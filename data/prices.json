@@ -1,0 +1,140 @@
+{
+  "checkedAt": "2026-11-22T01:45:00+00:00",
+  "dates": [
+    "2026-11-22",
+    "2026-11-23",
+    "2026-11-24",
+    "2026-11-25",
+    "2026-11-26",
+    "2026-11-27",
+    "2026-11-28"
+  ],
+  "rentals": {
+    "603326": {
+      "direct": {
+        "checkedAt": "2026-11-22T01:45:00+00:00",
+        "currency": "USD",
+        "sourceUrl": "https://api.lodgify.com/v2/rates/calendar?houseId=603326&roomTypeId=670117&startDate=2026-11-22&endDate=2026-11-28",
+        "sourceUrls": [
+          "https://api.lodgify.com/v2/rates/calendar?houseId=603326&roomTypeId=670117&startDate=2026-11-22&endDate=2026-11-28"
+        ],
+        "method": "direct-weekly-calendar-base",
+        "nightly": [
+          {
+            "date": "2026-11-22",
+            "price": 126.0
+          },
+          {
+            "date": "2026-11-23",
+            "price": 128.0
+          },
+          {
+            "date": "2026-11-24",
+            "price": 147.0
+          },
+          {
+            "date": "2026-11-25",
+            "price": 194.0
+          },
+          {
+            "date": "2026-11-26",
+            "price": 192.0
+          },
+          {
+            "date": "2026-11-27",
+            "price": 199.0
+          },
+          {
+            "date": "2026-11-28",
+            "price": 161.0
+          }
+        ],
+        "average": 163.86
+      }
+    },
+    "603323": {
+      "direct": {
+        "checkedAt": "2026-11-22T01:45:00+00:00",
+        "currency": "USD",
+        "sourceUrl": "https://api.lodgify.com/v2/rates/calendar?houseId=603323&roomTypeId=670114&startDate=2026-11-22&endDate=2026-11-28",
+        "sourceUrls": [
+          "https://api.lodgify.com/v2/rates/calendar?houseId=603323&roomTypeId=670114&startDate=2026-11-22&endDate=2026-11-28"
+        ],
+        "method": "direct-weekly-calendar-base",
+        "nightly": [
+          {
+            "date": "2026-11-22",
+            "price": 130.0
+          },
+          {
+            "date": "2026-11-23",
+            "price": 130.0
+          },
+          {
+            "date": "2026-11-24",
+            "price": 140.0
+          },
+          {
+            "date": "2026-11-25",
+            "price": 184.0
+          },
+          {
+            "date": "2026-11-26",
+            "price": 183.0
+          },
+          {
+            "date": "2026-11-27",
+            "price": 189.0
+          },
+          {
+            "date": "2026-11-28",
+            "price": 153.0
+          }
+        ],
+        "average": 158.43
+      }
+    },
+    "728474": {
+      "direct": {
+        "checkedAt": "2026-11-22T01:45:00+00:00",
+        "currency": "USD",
+        "sourceUrl": "https://api.lodgify.com/v2/rates/calendar?houseId=728474&roomTypeId=795590&startDate=2026-11-22&endDate=2026-11-28",
+        "sourceUrls": [
+          "https://api.lodgify.com/v2/rates/calendar?houseId=728474&roomTypeId=795590&startDate=2026-11-22&endDate=2026-11-28"
+        ],
+        "method": "direct-weekly-calendar-base",
+        "nightly": [
+          {
+            "date": "2026-11-22",
+            "price": 130.0
+          },
+          {
+            "date": "2026-11-23",
+            "price": 130.0
+          },
+          {
+            "date": "2026-11-24",
+            "price": 142.0
+          },
+          {
+            "date": "2026-11-25",
+            "price": 188.0
+          },
+          {
+            "date": "2026-11-26",
+            "price": 188.0
+          },
+          {
+            "date": "2026-11-27",
+            "price": 189.0
+          },
+          {
+            "date": "2026-11-28",
+            "price": 152.0
+          }
+        ],
+        "average": 159.86
+      }
+    }
+  }
+}

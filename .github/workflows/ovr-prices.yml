@@ -1,0 +1,33 @@
+name: Refresh OVR comparison prices
+on:
+  schedule:
+    - cron: '19 13 * * *'
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: ovr-v3-prices-main
+  cancel-in-progress: false
+jobs:
+  refresh:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Collect public and direct rates
+        env:
+          LODGIFY_API_KEY: ${{ secrets.LODGIFY_API_KEY }}
+        run: python3 scripts/prices/collect.py
+      - name: Commit only the comparison snapshot
+        run: |
+          git add -- data/prices.json
+          git diff --cached --quiet && exit 0
+          test "$(git diff --cached --name-only)" = "data/prices.json"
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh verified nightly rates'
+          git pull --rebase origin main
+          git push origin HEAD:main

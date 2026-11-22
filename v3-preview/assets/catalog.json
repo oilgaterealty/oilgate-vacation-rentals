@@ -1,0 +1,44 @@
+{
+  "603326": {
+    "name": "Oakdale Unit 1",
+    "guests": 6,
+    "facts": "3 bedrooms · 3 beds · 1 bath · up to 6 guests",
+    "bedTypes": [
+      "2 Double bed",
+      "1 Queen bed"
+    ],
+    "highlights": "Private kitchen · Shared laundry · Street parking",
+    "checkin": "03:00 PM",
+    "checkout": "11:00 AM",
+    "pets": false,
+    "cancellation": "All paid prepayments are non-refundable."
+  },
+  "603323": {
+    "name": "Oakdale Unit 2",
+    "guests": 6,
+    "facts": "3 bedrooms · 3 beds · 1 bath · up to 6 guests",
+    "bedTypes": [
+      "2 Double bed",
+      "1 Queen bed"
+    ],
+    "highlights": "Private kitchen · Shared laundry · Driveway parking",
+    "checkin": "03:00 PM",
+    "checkout": "11:00 AM",
+    "pets": false,
+    "cancellation": "All paid prepayments are non-refundable."
+  },
+  "728474": {
+    "name": "Parkgate",
+    "guests": 6,
+    "facts": "3 bedrooms · 3 beds · 1 bath · up to 6 guests",
+    "bedTypes": [
+      "2 Queen beds",
+      "1 Full bed"
+    ],
+    "highlights": "Private kitchen · Dishwasher · Driveway parking",
+    "checkin": "03:00 PM",
+    "checkout": "11:00 AM",
+    "pets": false,
+    "cancellation": "All paid prepayments are non-refundable."
+  }
+}
