@@ -1,0 +1,44 @@
+{
+  "notes": "Verified public listing URLs from Oilgate Realty records (str-watch/guest-view-audit.json & Pepper Potts Transition Pilot). Never guess a listing URL; missing URLs stay null.",
+  "guests": 2,
+  "nights": 7,
+  "currency": "USD",
+  "properties": [
+    {
+      "id": "603326",
+      "roomId": "670117",
+      "slug": "unit-1-at-oilgate-at-oakdale",
+      "name": "Oakdale / Unit 1",
+      "channels": {
+        "direct": "https://vacationrentals.oilgaterealty.com/direct",
+        "airbnb": "https://www.airbnb.com/rooms/1223194060259544334",
+        "vrbo": "https://www.vrbo.com/4010834",
+        "booking": "https://www.booking.com/hotel/us/oilgate-at-oakdale-akron.html"
+      }
+    },
+    {
+      "id": "603323",
+      "roomId": "670114",
+      "slug": "unit-2-at-oilgate-at-oakdale",
+      "name": "Oakdale / Unit 2",
+      "channels": {
+        "direct": "https://vacationrentals.oilgaterealty.com/direct",
+        "airbnb": "https://www.airbnb.com/rooms/1223969239127614464",
+        "vrbo": "https://www.vrbo.com/4010862",
+        "booking": "https://www.booking.com/hotel/us/oilgate-at-oakdale.html"
+      }
+    },
+    {
+      "id": "728474",
+      "roomId": "795590",
+      "slug": "oilgate-at-parkgate",
+      "name": "Oilgate at Parkgate",
+      "channels": {
+        "direct": "https://vacationrentals.oilgaterealty.com/direct",
+        "airbnb": "https://www.airbnb.com/rooms/1542810423162271885",
+        "vrbo": null,
+        "booking": "https://www.booking.com/hotel/us/oilgate-at-parkgate.html"
+      }
+    }
+  ]
+}

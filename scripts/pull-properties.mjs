@@ -68,6 +68,18 @@ for (const [id, slug, displayName] of listings) {
   const amenities = Object.fromEntries(Object.entries(room.amenities).map(([group, items]) => [group, items.map(x => clean(x.text))]));
   data.properties[id] = { id, name: displayName, sourceName: clean(property.name), page: `${slug}.html`, publicUrl, description: clean(room.description || property.description), bedrooms: room.bedrooms ?? null, bathrooms: room.bathrooms ?? null, beds: bedTypes.length ? bedTypes.reduce((n, x) => n + Number(x.prefix), 0) : null, bedTypes: bedTypes.map(x => clean(x.text)), maxGuests: room.max_people ?? null, amenities, petsAllowed: room.pets_allowed ?? null, checkin, checkout, houseRules: clean(property.agreement_text), policies, photos, publicFacts: faq, missing: [] };
   if (id === '728474') {
+    const apiObserved = { bedrooms: data.properties[id].bedrooms, beds: data.properties[id].beds, bathrooms: data.properties[id].bathrooms };
+    data.properties[id].ownerOverride = {
+      source: 'LaVante, 2026-11-21',
+      fields: ['bedrooms', 'beds', 'bathrooms'],
+      values: { bedrooms: 3, beds: 3, bathrooms: 1 },
+      apiObserved,
+      note: 'Owner confirmed Parkgate is 3 bedrooms, 3 beds, 1 bathroom; owner facts win over stale listing data.'
+    };
+    data.properties[id].bedrooms = 3;
+    data.properties[id].beds = 3;
+    data.properties[id].bathrooms = 1;
+    data.properties[id].description = data.properties[id].description.replace(/\b2BR\b/g, '3BR');
     const $existing = load(await readFile(new URL(`${slug}.html`, root), 'utf8'));
     const seen = new Set();
     data.properties[id].retainedPhotos = $existing('img[src^="assets/parkgate-"]').toArray().map(el => ({ url: $existing(el).attr('src'), alt: $existing(el).attr('alt') || displayName })).filter(x => !seen.has(x.url) && seen.add(x.url));

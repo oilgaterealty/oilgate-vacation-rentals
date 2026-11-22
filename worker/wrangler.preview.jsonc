@@ -1,0 +1,16 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "pepper-chat-v3-preview",
+  "account_id": "d89433a4f23085ae180ad50e3ad20812",
+  "main": "src/preview.js",
+  "compatibility_date": "2026-11-20",
+  "workers_dev": true,
+  "ai": { "binding": "AI" },
+  "ratelimits": [{ "name": "PEPPER_LIMIT", "namespace_id": "728475", "simple": { "limit": 10, "period": 60 } }],
+  "vars": {
+    "GEMINI_MODEL": "gemini-2.5-flash",
+    "HOME_LAB_ENABLED": "false",
+    "ALLOWED_ORIGINS": "https://oilgaterealty.github.io,https://vacationrentals.oilgaterealty.com"
+  },
+  "observability": { "enabled": false }
+}
