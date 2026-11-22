@@ -17,7 +17,7 @@ const clean = value => {
   return $.text().replace(phone, '').replace(/\r/g, '').replace(/[ \t]+/g, ' ').replace(/\n\s*\n+/g, '\n\n').trim();
 };
 async function get(url, api = false) {
-  const r = await fetch(url, { headers: api ? { 'X-ApiKey': key, Accept: 'application/json' } : {}, redirect: api ? 'error' : 'follow', signal: AbortSignal.timeout(30000) });
+  const r = await fetch(url, { headers: api ? { 'X-ApiKey': key, Accept: 'application/json' } : {}, signal: AbortSignal.timeout(30000) });
   if (!r.ok) throw new Error(`${api ? 'Lodgify' : 'Public source'} HTTP ${r.status}`);
   return api ? r.json() : r.text();
 }
@@ -34,7 +34,6 @@ for (const [name, domain] of [['Facebook', 'facebook.com'], ['Instagram', 'insta
   const url = $home('a[href]').toArray().map(el => $home(el).attr('href')).find(x => { try { return new URL(x).hostname.replace(/^www\./, '') === domain; } catch { return false; } });
   if (url) social.push({ name, url });
 }
-const prior = await readFile(new URL('data/properties.json',root),'utf8').then(JSON.parse).catch(error=>{if(error.code==='ENOENT')return {};throw error;});
 const data = {
   pulledAt: new Date().toISOString(),
   sources: ['https://oilgaterealty.com/en', 'https://api.lodgify.com/v2/properties/{id}', 'https://api.lodgify.com/v2/properties/{id}/rooms'],
@@ -68,15 +67,6 @@ for (const [id, slug, displayName] of listings) {
   const photos = room.images.map((photo, i) => ({ url: new URL(photo.url, 'https://l.icdbcdn.com').href, alt: clean(photo.text) || `${displayName} — photo ${i + 1}` }));
   const amenities = Object.fromEntries(Object.entries(room.amenities).map(([group, items]) => [group, items.map(x => clean(x.text))]));
   data.properties[id] = { id, name: displayName, sourceName: clean(property.name), page: `${slug}.html`, publicUrl, description: clean(room.description || property.description), bedrooms: room.bedrooms ?? null, bathrooms: room.bathrooms ?? null, beds: bedTypes.length ? bedTypes.reduce((n, x) => n + Number(x.prefix), 0) : null, bedTypes: bedTypes.map(x => clean(x.text)), maxGuests: room.max_people ?? null, amenities, petsAllowed: room.pets_allowed ?? null, checkin, checkout, houseRules: clean(property.agreement_text), policies, photos, publicFacts: faq, missing: [] };
-  const fixed = prior.properties?.[id]?.ownerOverride;
-  if (fixed) {
-    const p = data.properties[id];
-    p.ownerOverride = fixed;
-    for (const field of ['bedrooms','beds','bathrooms','bedTypes']) if (Object.hasOwn(fixed,field)) p[field]=fixed[field];
-    p.amenities.room = (p.amenities.room || []).map(x => /^\d+ Bedroom(s)?$/i.test(x) ? p.bedrooms+' Bedroom' : x);
-    p.amenities.sleeping = (p.amenities.sleeping || []).filter(x => !/^\d+ .+ bed(s)?$/i.test(x)).concat(p.bedTypes);
-    if(p.bedrooms===3) p.description=p.description.replace(/\b(two[- ]bedroom|2[- ]bedroom|2BR)\b/gi,'three-bedroom');
-  }
   if (id === '728474') {
     const $existing = load(await readFile(new URL(`${slug}.html`, root), 'utf8'));
     const seen = new Set();
