@@ -1,0 +1,854 @@
+{
+  "603326": {
+    "hero": {
+      "src": "v4-preview/photos/u1/hero.webp",
+      "alt": "Oakdale Unit 1 front exterior",
+      "w": 1400,
+      "h": 933
+    },
+    "about": {
+      "src": "v4-preview/photos/u1/about.webp",
+      "alt": "Oakdale Unit 1 living room with original wood coffered ceiling",
+      "w": 1100,
+      "h": 825
+    },
+    "categories": [
+      {
+        "name": "Exterior",
+        "slug": "exterior",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u1/01-exterior-01.webp",
+            "alt": "Front exterior of the Oakdale duplex",
+            "w": 1100,
+            "h": 733
+          },
+          {
+            "src": "v4-preview/photos/u1/01-exterior-02.webp",
+            "alt": "Side-front exterior and lawn",
+            "w": 1100,
+            "h": 733
+          },
+          {
+            "src": "v4-preview/photos/u1/01-exterior-03.webp",
+            "alt": "Rear exterior and porch deck",
+            "w": 1100,
+            "h": 733
+          },
+          {
+            "src": "v4-preview/photos/u1/01-exterior-04.webp",
+            "alt": "Backyard and garage view",
+            "w": 1100,
+            "h": 733
+          },
+          {
+            "src": "v4-preview/photos/u1/01-exterior-05.webp",
+            "alt": "Private exterior entry door",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u1/01-exterior-06.webp",
+            "alt": "Smart home keypad entry",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Living room",
+        "slug": "living-room",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u1/02-living-room-01.webp",
+            "alt": "Living room with wood coffered ceiling and plush seating",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u1/02-living-room-02.webp",
+            "alt": "Living room entertainment area with free cable & PPV",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u1/02-living-room-03.webp",
+            "alt": "Living room French doors and reading armchair",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u1/02-living-room-04.webp",
+            "alt": "Open sightline from living room to dining room",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Full kitchen",
+        "slug": "full-kitchen",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u1/03-full-kitchen-01.webp",
+            "alt": "Full private kitchen with cabinetry, sink, and microwave",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u1/03-full-kitchen-02.webp",
+            "alt": "Full kitchen range, oven, and prep counters",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u1/03-full-kitchen-03.webp",
+            "alt": "Full-size refrigerator and kitchen entry",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Dining room",
+        "slug": "dining-room",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u1/04-dining-room-01.webp",
+            "alt": "Dining room table and upright piano",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u1/04-dining-room-02.webp",
+            "alt": "Dining table with classic wood trim",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u1/04-dining-room-03.webp",
+            "alt": "Upright piano accent in dining room",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u1/04-dining-room-04.webp",
+            "alt": "Dining room hallway view",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Bedroom 1",
+        "slug": "bedroom-1",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u1/05-bedroom-1-01.webp",
+            "alt": "Bedroom 1 \u2014 Sunroom view 1",
+            "w": 924,
+            "h": 2000
+          },
+          {
+            "src": "v4-preview/photos/u1/05-bedroom-1-02.webp",
+            "alt": "Bedroom 1 \u2014 Sunroom view 2",
+            "w": 1100,
+            "h": 508
+          },
+          {
+            "src": "v4-preview/photos/u1/05-bedroom-1-03.webp",
+            "alt": "Bedroom 1 \u2014 Sunroom view 3",
+            "w": 1100,
+            "h": 508
+          },
+          {
+            "src": "v4-preview/photos/u1/05-bedroom-1-04.webp",
+            "alt": "Bedroom 1 \u2014 Sunroom view 4",
+            "w": 1100,
+            "h": 508
+          },
+          {
+            "src": "v4-preview/photos/u1/05-bedroom-1-05.webp",
+            "alt": "Bedroom 1 \u2014 Sunroom view 5",
+            "w": 924,
+            "h": 2000
+          },
+          {
+            "src": "v4-preview/photos/u1/05-bedroom-1-06.webp",
+            "alt": "Bedroom 1 \u2014 Sunroom view 6",
+            "w": 1100,
+            "h": 508
+          },
+          {
+            "src": "v4-preview/photos/u1/05-bedroom-1-07.webp",
+            "alt": "Bedroom 1 French door entrance",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Bedroom 2",
+        "slug": "bedroom-2",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u1/06-bedroom-2-01.webp",
+            "alt": "Bedroom 2 bed, lamp, and built-in bookshelves",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u1/06-bedroom-2-02.webp",
+            "alt": "Bedroom 2 full view with decorative fireplace",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u1/06-bedroom-2-03.webp",
+            "alt": "Bedroom 2 Fire TV, seating, and workspace corner",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u1/06-bedroom-2-04.webp",
+            "alt": "Bedroom 2 classic wood pocket doors",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Bedroom 3",
+        "slug": "bedroom-3",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u1/07-bedroom-3-01.webp",
+            "alt": "Bedroom 3 bed and mounted Fire TV",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u1/07-bedroom-3-02.webp",
+            "alt": "Bedroom 3 bed and dedicated workspace with chair",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u1/07-bedroom-3-03.webp",
+            "alt": "Bedroom 3 built-in closet and storage",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u1/07-bedroom-3-04.webp",
+            "alt": "Bedroom 3 private doorway",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Bathrooms",
+        "slug": "bathrooms",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u1/08-bathrooms-01.webp",
+            "alt": "Full bathroom with tub/shower and vanity",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u1/08-bathrooms-02.webp",
+            "alt": "Bathroom wainscoting and wall cabinet",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u1/08-bathrooms-03.webp",
+            "alt": "Bathroom vanity mirror and fixtures",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Laundry area",
+        "slug": "laundry-area",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u1/09-laundry-area-01.webp",
+            "alt": "Laundry area with washer, dryer, and folding space",
+            "w": 1100,
+            "h": 825
+          }
+        ]
+      }
+    ]
+  },
+  "603323": {
+    "hero": {
+      "src": "v4-preview/photos/u2/hero.webp",
+      "alt": "Oakdale Unit 2 exterior",
+      "w": 1400,
+      "h": 933
+    },
+    "about": {
+      "src": "v4-preview/photos/u2/about.webp",
+      "alt": "Oakdale Unit 2 Penthouse Suite spanning the entire upper floor",
+      "w": 1100,
+      "h": 825
+    },
+    "categories": [
+      {
+        "name": "Exterior",
+        "slug": "exterior",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u2/01-exterior-01.webp",
+            "alt": "Oakdale duplex front-side view and walkway",
+            "w": 1100,
+            "h": 733
+          },
+          {
+            "src": "v4-preview/photos/u2/01-exterior-02.webp",
+            "alt": "Front exterior of the Oakdale duplex",
+            "w": 1100,
+            "h": 733
+          },
+          {
+            "src": "v4-preview/photos/u2/01-exterior-03.webp",
+            "alt": "Rear exterior and dedicated Unit 2 driveway",
+            "w": 1100,
+            "h": 733
+          },
+          {
+            "src": "v4-preview/photos/u2/01-exterior-04.webp",
+            "alt": "Backyard and private driveway space",
+            "w": 1100,
+            "h": 733
+          },
+          {
+            "src": "v4-preview/photos/u2/01-exterior-05.webp",
+            "alt": "Private side entry door",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/01-exterior-06.webp",
+            "alt": "Smart home keypad entry",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Living room",
+        "slug": "living-room",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u2/02-living-room-01.webp",
+            "alt": "Cozy living room with couch, ceiling fan, and cable TV",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/02-living-room-02.webp",
+            "alt": "Living room seating and arched doorway",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/02-living-room-03.webp",
+            "alt": "Plush living room sofa and blackout drapes",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u2/02-living-room-04.webp",
+            "alt": "Hallway arch opening into the living room",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Full kitchen",
+        "slug": "full-kitchen",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u2/03-full-kitchen-01.webp",
+            "alt": "Full private kitchen with cabinetry, range, and microwave",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u2/03-full-kitchen-02.webp",
+            "alt": "Open view between full kitchen and separate dining room",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/03-full-kitchen-03.webp",
+            "alt": "Kitchen refrigerator and brick accent wall",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Dining room",
+        "slug": "dining-room",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u2/04-dining-room-01.webp",
+            "alt": "Separate dining room with wood dining table",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/04-dining-room-02.webp",
+            "alt": "Dining room looking into full private kitchen",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Bedroom 1",
+        "slug": "bedroom-1",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u2/05-bedroom-1-01.webp",
+            "alt": "Penthouse Suite (whole upper floor) \u2014 view 1",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u2/05-bedroom-1-02.webp",
+            "alt": "Penthouse Suite (whole upper floor) \u2014 view 2",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u2/05-bedroom-1-03.webp",
+            "alt": "Penthouse Suite (whole upper floor) \u2014 view 3",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/05-bedroom-1-04.webp",
+            "alt": "Penthouse Suite (whole upper floor) \u2014 view 4",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/05-bedroom-1-05.webp",
+            "alt": "Penthouse Suite (whole upper floor) \u2014 view 5",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/05-bedroom-1-06.webp",
+            "alt": "Penthouse Suite (whole upper floor) \u2014 view 6",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/05-bedroom-1-07.webp",
+            "alt": "Penthouse Suite (whole upper floor) \u2014 view 7",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/05-bedroom-1-08.webp",
+            "alt": "Penthouse Suite (whole upper floor) \u2014 view 8",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u2/05-bedroom-1-09.webp",
+            "alt": "Private staircase to the Penthouse Suite",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Bedroom 2",
+        "slug": "bedroom-2",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u2/06-bedroom-2-01.webp",
+            "alt": "Bedroom 2 with workspace & Fire TV \u2014 view 1",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/06-bedroom-2-02.webp",
+            "alt": "Bedroom 2 with workspace & Fire TV \u2014 view 2",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u2/06-bedroom-2-03.webp",
+            "alt": "Bedroom 2 with workspace & Fire TV \u2014 view 3",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/06-bedroom-2-04.webp",
+            "alt": "Bedroom 2 with workspace & Fire TV \u2014 view 4",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u2/06-bedroom-2-05.webp",
+            "alt": "Bedroom 2 with workspace & Fire TV \u2014 view 5",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/06-bedroom-2-06.webp",
+            "alt": "Bedroom 2 with workspace & Fire TV \u2014 view 6",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Bedroom 3",
+        "slug": "bedroom-3",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u2/07-bedroom-3-01.webp",
+            "alt": "Bedroom 3 with stained-glass doors & workspace \u2014 view 1",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/07-bedroom-3-02.webp",
+            "alt": "Bedroom 3 with stained-glass doors & workspace \u2014 view 2",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/07-bedroom-3-03.webp",
+            "alt": "Bedroom 3 with stained-glass doors & workspace \u2014 view 3",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/u2/07-bedroom-3-04.webp",
+            "alt": "Bedroom 3 with stained-glass doors & workspace \u2014 view 4",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/07-bedroom-3-05.webp",
+            "alt": "Bedroom 3 with stained-glass doors & workspace \u2014 view 5",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/07-bedroom-3-06.webp",
+            "alt": "Bedroom 3 with stained-glass doors & workspace \u2014 view 6",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Bathrooms",
+        "slug": "bathrooms",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u2/08-bathrooms-01.webp",
+            "alt": "Full bathroom vanity and doorway",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/08-bathrooms-02.webp",
+            "alt": "Full tub and shower",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/u2/08-bathrooms-03.webp",
+            "alt": "Bathroom layout and storage",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      },
+      {
+        "name": "Laundry area",
+        "slug": "laundry-area",
+        "photos": [
+          {
+            "src": "v4-preview/photos/u2/09-laundry-area-01.webp",
+            "alt": "Laundry area with washer and dryer",
+            "w": 1100,
+            "h": 825
+          }
+        ]
+      }
+    ]
+  },
+  "728474": {
+    "hero": {
+      "src": "v4-preview/photos/pg/hero.webp",
+      "alt": "Oilgate at Parkgate completely renovated front exterior",
+      "w": 1086,
+      "h": 1448
+    },
+    "about": {
+      "src": "v4-preview/photos/pg/about.webp",
+      "alt": "Oilgate at Parkgate renovated living room with fireplace",
+      "w": 1100,
+      "h": 825
+    },
+    "categories": [
+      {
+        "name": "Exterior",
+        "slug": "exterior",
+        "photos": [
+          {
+            "src": "v4-preview/photos/pg/01-exterior-01.webp",
+            "alt": "Completely renovated Parkgate front exterior",
+            "w": 1086,
+            "h": 1448
+          },
+          {
+            "src": "v4-preview/photos/pg/01-exterior-02.webp",
+            "alt": "Front lawn, porch, and tree-lined street",
+            "w": 624,
+            "h": 468
+          },
+          {
+            "src": "v4-preview/photos/pg/01-exterior-03.webp",
+            "alt": "Rear exterior and private back deck",
+            "w": 576,
+            "h": 432
+          },
+          {
+            "src": "v4-preview/photos/pg/01-exterior-04.webp",
+            "alt": "Big private fenced backyard",
+            "w": 624,
+            "h": 468
+          },
+          {
+            "src": "v4-preview/photos/pg/01-exterior-05.webp",
+            "alt": "Backyard view with detached garage and shed",
+            "w": 576,
+            "h": 432
+          }
+        ]
+      },
+      {
+        "name": "Living room",
+        "slug": "living-room",
+        "photos": [
+          {
+            "src": "v4-preview/photos/pg/02-living-room-01.webp",
+            "alt": "Renovated living room with fireplace and cozy sofa",
+            "w": 1100,
+            "h": 825
+          },
+          {
+            "src": "v4-preview/photos/pg/02-living-room-02.webp",
+            "alt": "Living room with 75-inch TV, free cable & PPV",
+            "w": 1000,
+            "h": 750
+          },
+          {
+            "src": "v4-preview/photos/pg/02-living-room-03.webp",
+            "alt": "Wide open living area and entertainment center",
+            "w": 1000,
+            "h": 753
+          },
+          {
+            "src": "v4-preview/photos/pg/02-living-room-04.webp",
+            "alt": "Living room looking toward dining nook",
+            "w": 1000,
+            "h": 753
+          },
+          {
+            "src": "v4-preview/photos/pg/02-living-room-05.webp",
+            "alt": "Dedicated workspace corner",
+            "w": 900,
+            "h": 1200
+          }
+        ]
+      },
+      {
+        "name": "Full kitchen",
+        "slug": "full-kitchen",
+        "photos": [
+          {
+            "src": "v4-preview/photos/pg/03-full-kitchen-01.webp",
+            "alt": "Renovated full kitchen with stainless appliances",
+            "w": 1100,
+            "h": 1461
+          },
+          {
+            "src": "v4-preview/photos/pg/03-full-kitchen-02.webp",
+            "alt": "Stainless refrigerator, dishwasher, and deep sink",
+            "w": 900,
+            "h": 1200
+          },
+          {
+            "src": "v4-preview/photos/pg/03-full-kitchen-03.webp",
+            "alt": "Range, built-in microwave, and black tile flooring",
+            "w": 900,
+            "h": 1200
+          },
+          {
+            "src": "v4-preview/photos/pg/03-full-kitchen-04.webp",
+            "alt": "Kitchen counter and coffee station",
+            "w": 904,
+            "h": 1200
+          },
+          {
+            "src": "v4-preview/photos/pg/03-full-kitchen-05.webp",
+            "alt": "Kitchen breakfast stools and appliances",
+            "w": 904,
+            "h": 1200
+          }
+        ]
+      },
+      {
+        "name": "Dining room",
+        "slug": "dining-room",
+        "photos": [
+          {
+            "src": "v4-preview/photos/pg/04-dining-room-01.webp",
+            "alt": "Dining area with bistro table and blackout curtains",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/pg/04-dining-room-02.webp",
+            "alt": "Dining nook seating detail",
+            "w": 900,
+            "h": 1200
+          }
+        ]
+      },
+      {
+        "name": "Bedroom 1",
+        "slug": "bedroom-1",
+        "photos": [
+          {
+            "src": "v4-preview/photos/pg/05-bedroom-1-01.webp",
+            "alt": "Bedroom 1 with queen LED bed and ceiling fan",
+            "w": 1100,
+            "h": 1461
+          },
+          {
+            "src": "v4-preview/photos/pg/05-bedroom-1-02.webp",
+            "alt": "Bedroom 1 queen bed and luxury bedding",
+            "w": 1000,
+            "h": 750
+          },
+          {
+            "src": "v4-preview/photos/pg/05-bedroom-1-03.webp",
+            "alt": "Bedroom 1 closets and bright interior",
+            "w": 1000,
+            "h": 750
+          },
+          {
+            "src": "v4-preview/photos/pg/05-bedroom-1-04.webp",
+            "alt": "Bedroom 1 wide view",
+            "w": 1000,
+            "h": 753
+          }
+        ]
+      },
+      {
+        "name": "Bedroom 2",
+        "slug": "bedroom-2",
+        "photos": [
+          {
+            "src": "v4-preview/photos/pg/06-bedroom-2-01.webp",
+            "alt": "Bedroom 2 with queen bed and blackout curtains",
+            "w": 900,
+            "h": 1200
+          },
+          {
+            "src": "v4-preview/photos/pg/06-bedroom-2-02.webp",
+            "alt": "Bedroom 2 dresser, Fire TV, and ceiling fan",
+            "w": 900,
+            "h": 1200
+          },
+          {
+            "src": "v4-preview/photos/pg/06-bedroom-2-03.webp",
+            "alt": "Bedroom 2 full view",
+            "w": 904,
+            "h": 1200
+          }
+        ]
+      },
+      {
+        "name": "Bedroom 3",
+        "slug": "bedroom-3",
+        "photos": [
+          {
+            "src": "v4-preview/photos/pg/07-bedroom-3-01.webp",
+            "alt": "Bedroom 3 with full bed, wall-mounted Fire TV & blackout curtains",
+            "w": 900,
+            "h": 1200
+          },
+          {
+            "src": "v4-preview/photos/pg/07-bedroom-3-02.webp",
+            "alt": "Workspace and entertainment setup",
+            "w": 1100,
+            "h": 828
+          }
+        ]
+      },
+      {
+        "name": "Bathrooms",
+        "slug": "bathrooms",
+        "photos": [
+          {
+            "src": "v4-preview/photos/pg/08-bathrooms-01.webp",
+            "alt": "Renovated bathroom vanity and lighting",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/pg/08-bathrooms-02.webp",
+            "alt": "Marble-tile shower with luxe rainfall showerhead",
+            "w": 1100,
+            "h": 1467
+          },
+          {
+            "src": "v4-preview/photos/pg/08-bathrooms-03.webp",
+            "alt": "Full bathroom tub and shower",
+            "w": 900,
+            "h": 1200
+          },
+          {
+            "src": "v4-preview/photos/pg/08-bathrooms-04.webp",
+            "alt": "Bathroom vanity and fixtures",
+            "w": 904,
+            "h": 1200
+          }
+        ]
+      },
+      {
+        "name": "Laundry area",
+        "slug": "laundry-area",
+        "photos": [
+          {
+            "src": "v4-preview/photos/pg/09-laundry-area-01.webp",
+            "alt": "In-home washer and dryer laundry area",
+            "w": 1100,
+            "h": 1467
+          }
+        ]
+      }
+    ]
+  }
+}

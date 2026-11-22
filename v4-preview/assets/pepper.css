@@ -1,0 +1,464 @@
+/* Pepper Concierge v4 — 3D Round Head Button, Full-Body Grok Video Stage, Resizable Large Glass Panel */
+.pepper-root {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 90;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* 3D-looking Round Pepper Head Button */
+.pepper-fab {
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border-radius: 50%;
+  border: 3px solid #FEA802;
+  background: radial-gradient(circle at 32% 24%, #4f9cff 0%, #0b3a70 55%, #01152c 100%);
+  box-shadow:
+    0 12px 28px rgba(0, 6, 18, 0.65),
+    0 0 0 4px rgba(1, 35, 66, 0.72),
+    0 0 24px rgba(56, 189, 248, 0.35),
+    inset 0 6px 12px rgba(255, 255, 255, 0.42),
+    inset 0 -8px 14px rgba(0, 10, 26, 0.75);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease;
+}
+.pepper-fab::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0) 44%);
+  pointer-events: none;
+}
+.pepper-fab img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  border-radius: 50%;
+  transform: scale(1.06);
+}
+.pepper-fab:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 16px 34px rgba(0, 6, 18, 0.72),
+    0 0 0 4px rgba(254, 168, 2, 0.45),
+    0 0 28px rgba(254, 168, 2, 0.48),
+    inset 0 6px 12px rgba(255, 255, 255, 0.45);
+}
+.pepper-fab-badge {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #38bdf8;
+  border: 2px solid #012342;
+  box-shadow: 0 0 10px #38bdf8;
+  pointer-events: none;
+}
+
+/* Large, Resizable Glassy Chat Panel with Full-Body Pepper Stage */
+.pepper-drawer {
+  position: fixed;
+  right: 18px;
+  bottom: 100px;
+  width: min(760px, calc(100vw - 32px));
+  height: min(600px, calc(100vh - 124px));
+  min-width: 340px;
+  min-height: 400px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 110px);
+  background: rgba(4, 20, 42, 0.9);
+  border: 1px solid rgba(254, 168, 2, 0.48);
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  backdrop-filter: blur(22px) saturate(140%);
+  box-shadow: 0 28px 70px rgba(0, 4, 14, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #f4f8ff;
+}
+.pepper-drawer[hidden] { display: none; }
+
+/* Custom Top-Left Resize Handle (natural for bottom-right anchored dock) */
+.pepper-resize-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  cursor: nwse-resize;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  color: rgba(254, 168, 2, 0.75);
+  font-size: 13px;
+  user-select: none;
+  touch-action: none;
+}
+.pepper-resize-handle:hover { color: #FEA802; }
+
+.pepper-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 16px 12px 26px;
+  background: rgba(1, 22, 46, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  flex: 0 0 auto;
+}
+.pepper-head-title {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.05;
+  color: #FEA802;
+}
+.pepper-head-sub {
+  display: block;
+  font-size: 11.5px;
+  color: rgba(226, 236, 248, 0.78);
+}
+.pepper-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pepper-clear,
+.pepper-close {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.pepper-clear {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.pepper-close {
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  line-height: 1;
+}
+.pepper-clear:hover,
+.pepper-close:hover {
+  border-color: #FEA802;
+  color: #FEA802;
+}
+
+/* Split Body: Full-Body Pepper Stage on Left + Large Chat Area on Right */
+.pepper-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+.pepper-stage {
+  background: radial-gradient(ellipse at 50% 35%, rgba(56, 189, 248, 0.22) 0%, rgba(1, 22, 46, 0.85) 75%);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.pepper-avatar-frame {
+  width: 100%;
+  flex: 1;
+  min-height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: radial-gradient(circle at 50% 40%, #eef6ff 0%, #c8e2ff 100%);
+  position: relative;
+  box-shadow: 0 10px 26px rgba(0, 6, 18, 0.55), inset 0 0 20px rgba(56, 189, 248, 0.14);
+}
+.pepper-avatar-frame video,
+.pepper-avatar-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+.pepper-state-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(1, 22, 46, 0.82);
+  border: 1px solid rgba(56, 189, 248, 0.42);
+  color: #bae6fd;
+}
+.pepper-state-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+.pepper-stage[data-state="thinking"] .pepper-state-dot {
+  background: #FEA802;
+  box-shadow: 0 0 10px #FEA802;
+}
+.pepper-stage[data-state="talking"] .pepper-state-dot {
+  background: #34d399;
+  box-shadow: 0 0 10px #34d399;
+}
+
+.pepper-chat-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Unit selector + collapsible quick chips */
+.pepper-top-bar {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: rgba(2, 14, 30, 0.42);
+}
+.pepper-unit-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(226, 236, 248, 0.85);
+}
+.pepper-unit-select select {
+  background: rgba(255, 255, 255, 0.92);
+  color: #012342;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 7px;
+  padding: 4px 8px;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.pepper-chips-box {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  background: rgba(2, 14, 30, 0.3);
+}
+.pepper-chips-box summary {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #FEA802;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pepper-chips-box summary::-webkit-details-marker { display: none; }
+.pepper-chips-box summary::after {
+  content: "▾";
+  font-size: 13px;
+}
+.pepper-chips-box[open] summary::after { content: "▴"; }
+.pepper-taps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  padding-bottom: 4px;
+}
+.pepper-taps button {
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(254, 168, 2, 0.45);
+  background: rgba(1, 35, 66, 0.72);
+  color: #f4f8ff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pepper-taps button:hover {
+  background: #FEA802;
+  color: #012342;
+}
+
+/* Messages Thread — Spacious & Uncrowded */
+.pepper-thread {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pepper-msg {
+  margin: 0;
+  padding: 10px 13px;
+  border-radius: 13px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-line;
+  max-width: 90%;
+}
+.pepper-msg--assistant {
+  align-self: flex-start;
+  background: rgba(12, 42, 78, 0.78);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #f4f8ff;
+}
+.pepper-msg--user {
+  align-self: flex-end;
+  background: rgba(254, 168, 2, 0.92);
+  color: #012342;
+  font-weight: 500;
+}
+.pepper-msg-meta {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 3px;
+}
+
+/* Input Form */
+.pepper-form {
+  padding: 10px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(1, 18, 38, 0.72);
+}
+.pepper-send {
+  display: flex;
+  gap: 8px;
+}
+.pepper-send input {
+  flex: 1;
+  min-width: 0;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.94);
+  color: #012342;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 14px;
+}
+.pepper-send button {
+  height: 42px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #FEA802;
+  color: #012342;
+  font: 700 13.5px inherit;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.pepper-send button:hover { filter: brightness(1.06); }
+
+/* Footer Bar with Small Collapsed Safety Toggle */
+.pepper-foot {
+  padding: 8px 14px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(1, 12, 26, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  font-size: 12px;
+}
+.pepper-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pepper-links a {
+  color: #FEA802;
+  font-weight: 600;
+  text-decoration: none;
+}
+.pepper-links a:hover { text-decoration: underline; }
+
+.pepper-safety {
+  font-size: 11px;
+  color: rgba(226, 236, 248, 0.72);
+}
+.pepper-safety summary {
+  cursor: pointer;
+  color: rgba(226, 236, 248, 0.75);
+  font-weight: 600;
+  list-style: none;
+}
+.pepper-safety summary::-webkit-details-marker { display: none; }
+.pepper-safety summary::before { content: "🛡 "; }
+.pepper-safety p {
+  margin: 6px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(226, 236, 248, 0.76);
+  max-width: 440px;
+}
+
+@media (max-width: 720px) {
+  .pepper-root { right: 12px; bottom: 12px; }
+  .pepper-fab { width: 56px; height: 56px; }
+  .pepper-drawer {
+    right: 10px;
+    left: 10px;
+    bottom: 76px;
+    width: auto;
+    height: min(76vh, 560px);
+    min-width: 0;
+  }
+  .pepper-resize-handle { display: none; }
+  .pepper-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 138px 1fr;
+  }
+  .pepper-stage {
+    flex-direction: row;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 8px 12px;
+    justify-content: flex-start;
+  }
+  .pepper-avatar-frame {
+    width: 112px;
+    flex: 0 0 112px;
+    min-height: 118px;
+    height: 118px;
+  }
+}

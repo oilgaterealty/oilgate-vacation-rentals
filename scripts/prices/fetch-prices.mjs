@@ -4,7 +4,7 @@
  *
  * Reads:
  *   - scripts/prices/listings.json (verified listing URLs + Lodgify property/room IDs)
- *   - process.env.LODGIFY_API_KEY (or LODGIFY_KEY) for Direct quotes & nightly rates
+ *   - process.env.LODGIFY_API_KEY (or LODGIFY_KEY) for Direct quotes & availability
  *
  * Writes:
  *   - data/prices.json
@@ -14,7 +14,10 @@
  *   - Never prints secrets.
  *   - Never invents or estimates numbers.
  *   - Never bypasses bot checks, CAPTCHAs, or rate limits; blocked/unavailable
- *     channels stay null so the site renders a blank/dash cell with no notes.
+ *     channels stay null so the site renders a dash cell.
+ *   - If a unit is already booked during the default next-7-nights window, checks
+ *     Lodgify availability for the first open 7-night window in the next 45 days
+ *     and quotes all channels for that unit on that same open 7-night window.
  */
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -44,6 +47,12 @@ function addDays(iso, days) {
   return d.toISOString().slice(0, 10);
 }
 
+function daysBetween(startIso, endIso) {
+  const d1 = new Date(`${startIso}T12:00:00Z`);
+  const d2 = new Date(`${endIso}T12:00:00Z`);
+  return Math.round((d2 - d1) / 86400000);
+}
+
 function round2(n) {
   return Math.round(n * 100) / 100;
 }
@@ -57,20 +66,58 @@ function parseMoney(str) {
 }
 
 const today = akronTodayIso();
-const startDate = addDays(today, 1);
-const endDate = addDays(startDate, NIGHTS);
-const nightDates = Array.from({ length: NIGHTS }, (_, i) => addDays(startDate, i));
+const defaultStartDate = addDays(today, 1);
+const defaultEndDate = addDays(defaultStartDate, NIGHTS);
 
-async function fetchDirect(prop) {
+function makeNightDates(startIso) {
+  return Array.from({ length: NIGHTS }, (_, i) => addDays(startIso, i));
+}
+
+async function findOpenWindow(prop) {
+  if (!lodgifyKey) return { startDate: defaultStartDate, endDate: defaultEndDate };
+  const headers = {
+    'X-ApiKey': lodgifyKey,
+    Accept: 'application/json',
+    'User-Agent': 'Oilgate-PriceCompare/1.0',
+  };
+  try {
+    const searchEnd = addDays(defaultStartDate, 45);
+    const params = new URLSearchParams({ start: defaultStartDate, end: searchEnd });
+    const r = await fetch(`https://api.lodgify.com/v2/availability/${prop.id}?${params}`, {
+      headers,
+      redirect: 'manual',
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!r.ok) return { startDate: defaultStartDate, endDate: defaultEndDate };
+    const data = await r.json();
+    const periods = Array.isArray(data) ? (data[0]?.periods || []) : [];
+    for (const p of periods) {
+      if (!p?.available || !p.start || !p.end) continue;
+      const span = daysBetween(p.start.slice(0, 10), p.end.slice(0, 10)) + 1;
+      if (span >= NIGHTS) {
+        const s = p.start.slice(0, 10);
+        return { startDate: s, endDate: addDays(s, NIGHTS) };
+      }
+    }
+  } catch {
+    // Fall back to default window
+  }
+  return { startDate: defaultStartDate, endDate: defaultEndDate };
+}
+
+async function fetchDirect(prop, startDate, endDate) {
   const checkedAt = new Date().toISOString();
+  const nightDates = makeNightDates(startDate);
   const base = {
     channel: 'direct',
-    label: 'vacationrentals.oilgaterealty.com/direct',
-    sourceUrl: prop.channels.direct,
+    label: 'vacationrentals.oilgaterealty.com',
+    sourceUrl: 'https://vacationrentals.oilgaterealty.com',
     checkedAt,
     currency: CURRENCY,
     nights: NIGHTS,
     guests: GUESTS,
+    windowStart: startDate,
+    windowEnd: endDate,
     method: '7-night direct stay quote divided by 7 (USD, 2 guests, taxes and weekly discount included)',
     sevenNightTotal: null,
     averageNightly: null,
@@ -112,7 +159,6 @@ async function fetchDirect(prop) {
       return { ...base, status: 'invalid_quote' };
     }
 
-    // Also pull the 7 individual nightly calendar rates (USD) for transparency.
     const nightlyPrices = [];
     try {
       const calParams = new URLSearchParams({
@@ -140,7 +186,7 @@ async function fetchDirect(prop) {
         }
       }
     } catch {
-      // Calendar breakdown is supplemental; the verified 7-night quote still stands.
+      // Calendar breakdown is supplemental; verified 7-night quote still stands.
     }
 
     if (nightlyPrices.length !== NIGHTS) {
@@ -162,8 +208,9 @@ async function fetchDirect(prop) {
   }
 }
 
-async function fetchAirbnb(ctx, prop) {
+async function fetchAirbnb(ctx, prop, startDate, endDate) {
   const checkedAt = new Date().toISOString();
+  const nightDates = makeNightDates(startDate);
   const baseUrl = prop.channels.airbnb;
   const base = {
     channel: 'airbnb',
@@ -173,6 +220,8 @@ async function fetchAirbnb(ctx, prop) {
     currency: CURRENCY,
     nights: NIGHTS,
     guests: GUESTS,
+    windowStart: startDate,
+    windowEnd: endDate,
     method: '7-night public listing stay total divided by 7 (USD, 2 guests)',
     sevenNightTotal: null,
     averageNightly: null,
@@ -191,21 +240,21 @@ async function fetchAirbnb(ctx, prop) {
     if (resp.status() === 429 || resp.status() === 403) {
       return { ...base, sourceUrl: url, status: `blocked_http_${resp.status()}` };
     }
-    await page.waitForTimeout(4500);
+    await page.waitForTimeout(5000);
     const extracted = await page.evaluate((nights) => {
       const text = (document.body?.innerText || '').replace(/\s+/g, ' ');
       if (/verify you are human|bot or not|captcha|access denied/i.test(text.slice(0, 800))) {
         return { blocked: true };
       }
-      // Match the listing's own explicit "for 7 nights" total (never similar listings).
       const re = new RegExp(`\\$\\s*([\\d,]+(?:\\.\\d{2})?)\\s*for\\s+${nights}\\s+nights`, 'i');
       const m = text.match(re);
       if (m) return { total: m[0] };
-      // Fallback: inspect booking sidebar specifically for a "$X x 7 nights" or "Total $X" line.
       const sidebar = document.querySelector('[data-section-id="BOOK_IT_SIDEBAR"], [data-testid="book-it-default"]');
       if (sidebar) {
         const st = sidebar.innerText.replace(/\s+/g, ' ');
-        const sm = st.match(re) || st.match(/Total\s*(?:before taxes)?\s*\$\s*([\d,]+(?:\.\d{2})?)/i);
+        const sm = st.match(re)
+          || st.match(/Total\s*(?:before taxes)?\s*\$\s*([\d,]+(?:\.\d{2})?)/i)
+          || st.match(/\$\s*([\d,]+(?:\.\d{2})?)\s*total/i);
         if (sm) return { total: sm[0] };
       }
       return { total: null };
@@ -230,8 +279,9 @@ async function fetchAirbnb(ctx, prop) {
   }
 }
 
-async function fetchBooking(ctx, prop) {
+async function fetchBooking(ctx, prop, startDate, endDate) {
   const checkedAt = new Date().toISOString();
+  const nightDates = makeNightDates(startDate);
   const baseUrl = prop.channels.booking;
   const base = {
     channel: 'booking',
@@ -241,6 +291,8 @@ async function fetchBooking(ctx, prop) {
     currency: CURRENCY,
     nights: NIGHTS,
     guests: GUESTS,
+    windowStart: startDate,
+    windowEnd: endDate,
     method: '7-night public listing stay total divided by 7 (USD, 2 guests)',
     sevenNightTotal: null,
     averageNightly: null,
@@ -272,8 +324,7 @@ async function fetchBooking(ctx, prop) {
       const priceText = priceEl?.innerText?.trim() || '';
       const tableText = table.innerText.replace(/\s+/g, ' ');
       const taxMatch = tableText.match(/\+\s*\$\s*([\d,]+(?:\.\d{2})?)\s*taxes/i);
-      const perNightMatch = tableText.match(/\$\s*([\d,]+(?:\.\d{2})?)\s*per\s*night/i);
-      return { total: priceText, taxes: taxMatch ? `$${taxMatch[1]}` : null, perNight: perNightMatch ? `$${perNightMatch[1]}` : null };
+      return { total: priceText, taxes: taxMatch ? `$${taxMatch[1]}` : null };
     });
 
     if (extracted.blocked) return { ...base, sourceUrl: url, status: 'blocked_challenge' };
@@ -288,9 +339,6 @@ async function fetchBooking(ctx, prop) {
       sevenNightTotal: total,
       averageNightly: avg,
       nightlyPrices: nightDates.map(d => ({ date: d, effectiveNightly: avg })),
-      method: taxes > 0
-        ? '7-night public listing stay total plus displayed taxes divided by 7 (USD, 2 guests)'
-        : '7-night public listing stay total divided by 7 (USD, 2 guests)',
       status: 'ok',
     };
   } catch (err) {
@@ -300,8 +348,9 @@ async function fetchBooking(ctx, prop) {
   }
 }
 
-async function fetchVrbo(ctx, prop) {
+async function fetchVrbo(ctx, prop, startDate, endDate) {
   const checkedAt = new Date().toISOString();
+  const nightDates = makeNightDates(startDate);
   const baseUrl = prop.channels.vrbo;
   const base = {
     channel: 'vrbo',
@@ -311,6 +360,8 @@ async function fetchVrbo(ctx, prop) {
     currency: CURRENCY,
     nights: NIGHTS,
     guests: GUESTS,
+    windowStart: startDate,
+    windowEnd: endDate,
     method: '7-night public listing stay total divided by 7 (USD, 2 guests)',
     sevenNightTotal: null,
     averageNightly: null,
@@ -384,28 +435,40 @@ async function withFreshContext(fn) {
 }
 
 const output = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   checkedAt: new Date().toISOString(),
   checkedDate: today,
-  window: { startDate, endDate, nights: NIGHTS, guests: GUESTS, currency: CURRENCY },
+  window: { startDate: defaultStartDate, endDate: defaultEndDate, nights: NIGHTS, guests: GUESTS, currency: CURRENCY },
   freshnessHours: 48,
+  averages: { direct: null, airbnb: null, vrbo: null, booking: null },
   properties: {},
 };
 
 try {
   for (const prop of config.properties) {
-    const direct = await fetchDirect(prop);
-    const airbnb = await withFreshContext(c => fetchAirbnb(c, prop));
-    const vrbo = await withFreshContext(c => fetchVrbo(c, prop));
-    const booking = await withFreshContext(c => fetchBooking(c, prop));
+    let win = { startDate: defaultStartDate, endDate: defaultEndDate };
+    let direct = await fetchDirect(prop, win.startDate, win.endDate);
+    // If default 7-night window is booked on this unit (HTTP 400), find first open 7-night window
+    if (direct.status === 'http_400') {
+      const openWin = await findOpenWindow(prop);
+      if (openWin.startDate !== win.startDate) {
+        win = openWin;
+        direct = await fetchDirect(prop, win.startDate, win.endDate);
+      }
+    }
+    const airbnb = await withFreshContext(c => fetchAirbnb(c, prop, win.startDate, win.endDate));
+    const vrbo = await withFreshContext(c => fetchVrbo(c, prop, win.startDate, win.endDate));
+    const booking = await withFreshContext(c => fetchBooking(c, prop, win.startDate, win.endDate));
     output.properties[prop.id] = {
       id: prop.id,
       name: prop.name,
       slug: prop.slug,
+      window: { startDate: win.startDate, endDate: win.endDate, nights: NIGHTS },
       channels: { direct, airbnb, vrbo, booking },
     };
     console.log(
-      `${prop.name} (${prop.id}): direct=${direct.averageNightly ?? '—'} (${direct.status}), ` +
+      `${prop.name} (${prop.id}) [${win.startDate}..${win.endDate}]: ` +
+      `direct=${direct.averageNightly ?? '—'} (${direct.status}), ` +
       `airbnb=${airbnb.averageNightly ?? '—'} (${airbnb.status}), ` +
       `vrbo=${vrbo.averageNightly ?? '—'} (${vrbo.status}), ` +
       `booking=${booking.averageNightly ?? '—'} (${booking.status})`
@@ -415,7 +478,17 @@ try {
   if (browser) await browser.close();
 }
 
+// Compute all-unit average per channel (only from real verified quotes, never invented)
+for (const ch of ['direct', 'airbnb', 'vrbo', 'booking']) {
+  const vals = Object.values(output.properties)
+    .map(p => p.channels?.[ch]?.averageNightly)
+    .filter(v => typeof v === 'number' && Number.isFinite(v) && v > 0);
+  output.averages[ch] = vals.length
+    ? { averageNightly: round2(vals.reduce((a, b) => a + b, 0) / vals.length), unitsCounted: vals.length }
+    : { averageNightly: null, unitsCounted: 0 };
+}
+
 const outPath = new URL('data/prices.json', root);
 if (!existsSync(new URL('data/', root))) await mkdir(new URL('data/', root), { recursive: true });
 await writeFile(outPath, JSON.stringify(output, null, 2) + '\n');
-console.log('Saved data/prices.json for window', startDate, 'to', endDate);
+console.log('Saved data/prices.json. All-unit averages:', JSON.stringify(output.averages));

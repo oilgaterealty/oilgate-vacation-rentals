@@ -1,0 +1,50 @@
+{
+  "version": "2026-11-22",
+  "source": "Generated from data/properties.json and LaVante's Nov 22 v4 updates.",
+  "common": {
+    "greeting": "Hi there! I'm Pepper, your Oilgate Vacation Rentals concierge. Ask me anything about our three private 3-bedroom Akron homes \u2014 Oakdale Unit 1, Oakdale Unit 2 (with the Penthouse Suite!), and Parkgate \u2014 including amenities, beds, check-in times, parking, pets, nearby spots, or how to reserve!",
+    "units": "We offer three private 3-bedroom, 1-bathroom homes in Akron, Ohio \u2014 all with smart home entry, Cable TV + free pay-per-view, fast Wi-Fi, free parking, and no cleaning fees, ever:\n\u2022 Oakdale Unit 1: First-floor charm with wood coffered ceilings, workspace in each bedroom, full private kitchen.\n\u2022 Oakdale Unit 2: Upper-level home featuring the huge PENTHOUSE SUITE spanning the entire upper floor, separate dining room, and workspaces in each bedroom.\n\u2022 Oilgate at Parkgate: Completely renovated home with 2 queen + 1 full beds, 75-inch TV, private deck, and big yard.",
+    "cleaning": "No cleaning fees, ever \u2014 unless house rules are broken.",
+    "checkin": "Your personal smart home door code is sent at 2:45 PM. Check-in starts at 3:00 PM and checkout is 11:00 AM (Akron local time).",
+    "pets": "Pets are not allowed at any of our Akron homes \u2014 all three properties are pet-free.",
+    "nearby": "All three homes are minutes from Akron's famous Swenson's, Highland Square, LeBron James' I PROMISE School, the LeBron James Home Court museum, and Blossom Music Center.",
+    "booking": "To book: pick your stay in the Choose your stay selector, enter Check in, Check out, and Guests under Find your dates, and click Reserve to see your exact live total and finish checkout.",
+    "rules": "Quiet hours are 10:00 PM to 10:00 AM (Akron local time). Up to 6 overnight guests and up to 3 visitors. No parties, smoking, or pets. Minimum booking age 18. Guests are responsible for damage they cause. Oilgate Realty is not liable for injury or loss of personal property, except as required by law.",
+    "contact": "Email us anytime at oilgaterealty@gmail.com, or click Reserve above to review dates and checkout. We never share personal phone numbers."
+  },
+  "properties": {
+    "603326": {
+      "name": "Oakdale / Unit 1",
+      "page": "unit-1-at-oilgate-at-oakdale.html",
+      "maxGuests": 6,
+      "bedrooms": 3,
+      "bedsCount": 3,
+      "bathrooms": 1,
+      "beds": "Oakdale Unit 1 has 3 bedrooms, 3 beds (2 double, 1 queen), and 1 bathroom \u2014 sleeping up to 6 guests.",
+      "amenities": "Oakdale Unit 1 includes free cable TV with free pay-per-view, Fire TV + a workspace in each bedroom, fast Wi-Fi, full private kitchen, original wood coffered ceilings, 1 bathroom, free parking, and smart home entry.",
+      "parking": "Oakdale Unit 1 includes free street parking right out front. (The driveway is reserved for Unit 2 guests.)"
+    },
+    "603323": {
+      "name": "Oakdale / Unit 2",
+      "page": "unit-2-at-oilgate-at-oakdale.html",
+      "maxGuests": 6,
+      "bedrooms": 3,
+      "bedsCount": 3,
+      "bathrooms": 1,
+      "beds": "Oakdale Unit 2 has 3 bedrooms, 3 beds (2 double, 1 queen), and 1 bathroom \u2014 including the massive PENTHOUSE SUITE spanning the entire upper floor! Sleeps up to 6 guests.",
+      "amenities": "Oakdale Unit 2 features the huge Penthouse Suite (whole upper floor), separate dining room, full private kitchen, a workspace in each bedroom, Fire TV with free cable including pay-per-view, fast Wi-Fi, 1 bathroom, driveway parking, and smart home entry.",
+      "parking": "Oakdale Unit 2 guests have dedicated free driveway parking."
+    },
+    "728474": {
+      "name": "Oilgate at Parkgate",
+      "page": "oilgate-at-parkgate.html",
+      "maxGuests": 6,
+      "bedrooms": 3,
+      "bedsCount": 3,
+      "bathrooms": 1,
+      "beds": "Oilgate at Parkgate is a completely renovated 3-bedroom home with 2 queen beds, 1 full bed, and 1 bathroom \u2014 sleeping up to 6 guests.",
+      "amenities": "Parkgate is completely renovated with smart home entry, a 75-inch TV with free cable including pay-per-view, fast Wi-Fi, full renovated kitchen with stainless appliances & dishwasher, workspace, private deck, big backyard, in-home laundry, and 1 bathroom.",
+      "parking": "Parkgate includes free driveway or street parking (garage not in use; please don't park on the grass)."
+    }
+  }
+}
