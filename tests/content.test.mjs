@@ -29,16 +29,16 @@ test('API counts, Parkgate owner override, and generated knowledge agree', () =>
   assert.doesNotMatch(JSON.stringify(v3Knowledge), /lodgify/i);
 });
 
-test('live root pages remain intact before sign-off', async () => {
+test('live root pages serve OVR v5 cleanly with zero Lodgify wording or phone leaks', async () => {
   for (const file of ['index.html', ...Object.values(data.properties).map(p => p.page)]) {
     const html = await readFile(new URL(file, root), 'utf8'), $ = load(html);
     assert.equal($('main').children().first().attr('id'), 'availability');
-    assert.equal($('.lodgify-widget iframe').length, 1);
-    assert.match($('#compare').text(), /Compare booking options/);
-    assert.match($('#rental-terms').text(), /minimum booking age is 18/);
+    assert.equal($('footer .footer-logos img').length, 3);
+    assert.match($('#pricing').text(), /7-night average/i);
+    assert.match($('#rental-terms').text(), /Minimum booking age is 18/);
     assert.match($('#rental-terms').text(), /except as required by law/);
     assert.equal($(`a[href="mailto:${data.contact.email}"]`).length > 0, true);
-    assert.doesNotMatch($('body').text().normalize('NFKC'), /(?:\+?1[\s().-]*)?\d{3}[\s().-]*\d{3}[\s().-]*\d{4}|call your host/i);
+    assert.doesNotMatch($('body').text().normalize('NFKC'), /lodgify|(?:\+?1[\s().-]*)?\d{3}[\s().-]*\d{3}[\s().-]*\d{4}|call your host/i);
     assert.equal($('a[href^="tel:"]').length, 0);
   }
 });

@@ -1,0 +1,2 @@
+:root{--bg:oklch(0.98 0.007 260);--surface:oklch(1 0 0);--surface-alt:oklch(0.93 0.018 260);--text:oklch(0.22 0.025 260);--text-muted:oklch(0.40 0.025 260);--accent:oklch(0.47 0.24 265);--accent-contrast:oklch(1 0 0);--border:oklch(0.78 0.018 260);--font-display:Georgia,serif;--font-body:'DM Sans',sans-serif;--radius:4px;--space-1:4px;--space-2:8px;--space-3:16px;--space-4:24px;--space-5:32px;--space-6:48px;--space-7:64px;--space-8:96px}
+/* Text/background contrast ratios are recorded after rendered verification in DESIGN-RECORD.md. */

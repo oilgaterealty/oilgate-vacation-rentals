@@ -1,0 +1,409 @@
+/* Pepper Concierge v5 — Interactive 3D Sculpted Pepper Head Medallion + Full-Body Grok Video Stage */
+.pepper-root {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 90;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  perspective: 460px;
+}
+
+/* Interactive 3D Round Pepper Head Medallion Launcher */
+.pepper-fab {
+  --rx: 0deg;
+  --ry: 0deg;
+  --px: 50%;
+  --py: 35%;
+  --tx: 0px;
+  --ty: 0px;
+  width: 78px;
+  height: 78px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2.5px solid #FEA802;
+  background: radial-gradient(circle at 32% 24%, #10457e 0%, #012342 58%, #000e1f 100%);
+  box-shadow:
+    0 16px 32px rgba(0, 8, 22, 0.58),
+    0 0 0 3px rgba(1, 35, 66, 0.8),
+    0 0 22px rgba(254, 168, 2, 0.34),
+    inset 0 6px 14px rgba(255, 255, 255, 0.32),
+    inset 0 -10px 18px rgba(0, 8, 22, 0.85);
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(0);
+  transition: transform 0.16s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease;
+  animation: pepperFloat3d 5.4s ease-in-out infinite;
+}
+@keyframes pepperFloat3d {
+  0%, 100% { transform: rotateX(2deg) rotateY(-4deg) translateY(0px); }
+  50% { transform: rotateX(-2deg) rotateY(4deg) translateY(-3px); }
+}
+.pepper-fab:hover,
+.pepper-fab.is-tilting {
+  animation: none;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) scale(1.07);
+  box-shadow:
+    0 22px 42px rgba(0, 8, 22, 0.68),
+    0 0 0 3.5px rgba(254, 168, 2, 0.62),
+    0 0 34px rgba(254, 168, 2, 0.52),
+    inset 0 6px 14px rgba(255, 255, 255, 0.42),
+    inset 0 -10px 18px rgba(0, 8, 22, 0.82);
+}
+
+/* Inner clipped sphere dome for 3D depth layers */
+.pepper-fab-sphere {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  display: block;
+}
+/* Layer 0: Warm gold rim backlight behind Pepper's 3D head */
+.pepper-fab-aura {
+  position: absolute;
+  inset: -12%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at var(--px) var(--py), rgba(254, 168, 2, 0.48) 0%, rgba(56, 189, 248, 0.16) 44%, transparent 72%);
+  transform: translate3d(calc(var(--tx) * -0.45), calc(var(--ty) * -0.45), -6px);
+  pointer-events: none;
+}
+/* Layer 1: 3D-rendered Pepper concierge bust with parallax depth */
+.pepper-fab-head {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  border-radius: 50%;
+  transform: translate3d(var(--tx), var(--ty), 12px) scale(1.09);
+  filter: contrast(1.05) saturate(1.08) drop-shadow(0 6px 10px rgba(0, 6, 18, 0.55));
+  pointer-events: none;
+  transition: transform 0.14s ease-out;
+}
+/* Layer 2: Interactive pointer-tracking glass specular highlight dome */
+.pepper-fab-specular {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at var(--px) var(--py), rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.08) 34%, transparent 62%),
+    linear-gradient(155deg, rgba(255, 255, 255, 0.24) 0%, transparent 42%, rgba(0, 10, 26, 0.36) 100%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.42), inset 0 -4px 10px rgba(0, 10, 26, 0.62);
+  transform: translateZ(20px);
+  pointer-events: none;
+}
+.pepper-fab-badge {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #38bdf8;
+  border: 2px solid #012342;
+  box-shadow: 0 0 10px #38bdf8;
+  transform: translateZ(26px);
+  pointer-events: none;
+}
+
+/* Large, Resizable Glassy Chat Panel with Full-Body Grok Video Stage */
+.pepper-drawer {
+  position: fixed;
+  right: 18px;
+  bottom: 106px;
+  width: min(760px, calc(100vw - 32px));
+  height: min(600px, calc(100vh - 128px));
+  min-width: 340px;
+  min-height: 400px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 114px);
+  background: rgba(2, 22, 46, 0.95);
+  border: 1px solid rgba(254, 168, 2, 0.62);
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  backdrop-filter: blur(22px) saturate(140%);
+  box-shadow: 0 28px 70px rgba(0, 4, 14, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #f4f8ff;
+}
+.pepper-drawer[hidden] { display: none; }
+
+.pepper-resize-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  cursor: nwse-resize;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  color: rgba(254, 168, 2, 0.8);
+  font-size: 13px;
+  user-select: none;
+  touch-action: none;
+}
+.pepper-resize-handle:hover { color: #FEA802; }
+
+.pepper-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 16px 12px 26px;
+  background: rgba(1, 22, 46, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  flex: 0 0 auto;
+}
+.pepper-head-title {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.05;
+  color: #FEA802;
+}
+.pepper-head-sub {
+  display: block;
+  font-size: 11.5px;
+  color: rgba(226, 236, 248, 0.82);
+}
+.pepper-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pepper-clear,
+.pepper-close {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.pepper-clear { padding: 5px 10px; font-size: 12px; }
+.pepper-close { width: 32px; height: 32px; font-size: 20px; line-height: 1; }
+.pepper-clear:hover,
+.pepper-close:hover { border-color: #FEA802; color: #FEA802; }
+
+.pepper-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 235px 1fr;
+}
+.pepper-stage {
+  background: radial-gradient(circle at 50% 35%, rgba(16, 68, 128, 0.55) 0%, rgba(1, 16, 36, 0.94) 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.pepper-avatar-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 360px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #01142a;
+  border: 1px solid rgba(254, 168, 2, 0.35);
+}
+.pepper-still,
+.pepper-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pepper-video { opacity: 1; }
+.pepper-state-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 12px;
+  font-weight: 600;
+  color: #e6f0ff;
+}
+.pepper-state-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+.pepper-stage[data-state="thinking"] .pepper-state-dot { background: #FEA802; box-shadow: 0 0 8px #FEA802; }
+.pepper-stage[data-state="talking"] .pepper-state-dot { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+
+.pepper-chat-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+.pepper-top-bar {
+  padding: 8px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+}
+.pepper-unit-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(230, 240, 255, 0.9);
+}
+.pepper-unit-select select {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  color: #012342;
+  border: 1px solid rgba(254, 168, 2, 0.45);
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-weight: 600;
+  font-size: 12.5px;
+}
+.pepper-chips-box {
+  padding: 6px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+}
+.pepper-chips-box summary {
+  cursor: pointer;
+  color: #FEA802;
+  font-weight: 600;
+}
+.pepper-taps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.pepper-taps button {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(254, 168, 2, 0.45);
+  background: rgba(254, 168, 2, 0.12);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.pepper-taps button:hover {
+  background: #FEA802;
+  color: #012342;
+}
+.pepper-thread {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pepper-msg {
+  max-width: 88%;
+  padding: 10px 13px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+.pepper-msg--assistant {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #f4f8ff;
+}
+.pepper-msg--user {
+  align-self: flex-end;
+  background: #FEA802;
+  color: #012342;
+  font-weight: 600;
+}
+.pepper-form {
+  padding: 10px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(1, 18, 38, 0.72);
+}
+.pepper-send {
+  display: flex;
+  gap: 8px;
+}
+.pepper-send input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.96);
+  color: #012342;
+  font-size: 13.5px;
+}
+.pepper-send button {
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 0;
+  background: #FEA802;
+  color: #012342;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+.pepper-send button:hover { background: #ffbe3b; }
+.pepper-foot {
+  padding: 8px 14px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+.pepper-links { display: flex; gap: 12px; }
+.pepper-links a { color: #FEA802; text-decoration: none; font-weight: 600; }
+.pepper-links a:hover { text-decoration: underline; }
+.pepper-safety summary { color: rgba(226, 236, 248, 0.75); cursor: pointer; }
+.pepper-safety p { margin: 6px 0 0; font-size: 11.5px; color: rgba(226, 236, 248, 0.85); max-width: 360px; }
+
+@media (max-width: 720px) {
+  .pepper-fab { width: 66px; height: 66px; }
+  .pepper-drawer {
+    right: 10px;
+    bottom: 92px;
+    width: calc(100vw - 20px);
+    height: min(560px, calc(100vh - 110px));
+  }
+  .pepper-body { grid-template-columns: 1fr; grid-template-rows: 145px 1fr; }
+  .pepper-stage {
+    flex-direction: row;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 10px 14px;
+    justify-content: flex-start;
+  }
+  .pepper-avatar-frame { width: 92px; height: 122px; flex: 0 0 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pepper-fab { animation: none; transition: none; }
+  .pepper-video { display: none; }
+}
