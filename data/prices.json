@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
-  "checkedAt": "2026-11-27T19:59:43.580Z",
-  "checkedDate": "2026-11-27",
+  "checkedAt": "2026-11-28T18:59:38.643Z",
+  "checkedDate": "2026-11-28",
   "window": {
-    "startDate": "2026-11-28",
-    "endDate": "2026-12-05",
+    "startDate": "2026-11-29",
+    "endDate": "2026-12-06",
     "nights": 7,
     "guests": 2,
     "currency": "USD"
@@ -12,11 +12,11 @@
   "freshnessHours": 48,
   "averages": {
     "direct": {
-      "averageNightly": 115.59,
+      "averageNightly": 115.46,
       "unitsCounted": 3
     },
     "airbnb": {
-      "averageNightly": 120.86,
+      "averageNightly": 120.65,
       "unitsCounted": 2
     },
     "vrbo": {
@@ -34,8 +34,8 @@
       "name": "Oakdale / Unit 2",
       "slug": "unit-2-at-oilgate-at-oakdale",
       "window": {
-        "startDate": "2026-11-28",
-        "endDate": "2026-12-05",
+        "startDate": "2026-12-13",
+        "endDate": "2026-12-20",
         "nights": 7
       },
       "channels": {
@@ -43,50 +43,50 @@
           "channel": "direct",
           "label": "vacationrentals.oilgaterealty.com",
           "sourceUrl": "https://vacationrentals.oilgaterealty.com",
-          "checkedAt": "2026-11-27T19:59:57.026Z",
+          "checkedAt": "2026-11-28T18:59:52.665Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
-          "windowStart": "2026-11-28",
-          "windowEnd": "2026-12-05",
+          "windowStart": "2026-12-13",
+          "windowEnd": "2026-12-20",
           "method": "7-night direct stay quote divided by 7 (USD, 2 guests, taxes and weekly discount included)",
-          "sevenNightTotal": 819.88,
-          "averageNightly": 117.13,
+          "sevenNightTotal": 817.18,
+          "averageNightly": 116.74,
           "nightlyPrices": [
             {
-              "date": "2026-11-28",
-              "baseRate": 133,
-              "effectiveNightly": 117.13
+              "date": "2026-12-13",
+              "baseRate": 130,
+              "effectiveNightly": 116.74
             },
             {
-              "date": "2026-11-29",
+              "date": "2026-12-14",
               "baseRate": 130,
-              "effectiveNightly": 117.13
+              "effectiveNightly": 116.74
             },
             {
-              "date": "2026-11-30",
+              "date": "2026-12-15",
               "baseRate": 130,
-              "effectiveNightly": 117.13
+              "effectiveNightly": 116.74
             },
             {
-              "date": "2026-12-01",
+              "date": "2026-12-16",
               "baseRate": 130,
-              "effectiveNightly": 117.13
+              "effectiveNightly": 116.74
             },
             {
-              "date": "2026-12-02",
+              "date": "2026-12-17",
               "baseRate": 130,
-              "effectiveNightly": 117.13
+              "effectiveNightly": 116.74
             },
             {
-              "date": "2026-12-03",
+              "date": "2026-12-18",
               "baseRate": 130,
-              "effectiveNightly": 117.13
+              "effectiveNightly": 116.74
             },
             {
-              "date": "2026-12-04",
+              "date": "2026-12-19",
               "baseRate": 130,
-              "effectiveNightly": 117.13
+              "effectiveNightly": 116.74
             }
           ],
           "status": "ok"
@@ -94,44 +94,44 @@
         "airbnb": {
           "channel": "airbnb",
           "label": "Airbnb",
-          "sourceUrl": "https://www.airbnb.com/rooms/1223969239127614464?check_in=2026-11-28&check_out=2026-12-05&adults=2",
-          "checkedAt": "2026-11-27T19:59:57.523Z",
+          "sourceUrl": "https://www.airbnb.com/rooms/1223969239127614464?check_in=2026-12-13&check_out=2026-12-20&adults=2",
+          "checkedAt": "2026-11-28T18:59:53.114Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
-          "windowStart": "2026-11-28",
-          "windowEnd": "2026-12-05",
+          "windowStart": "2026-12-13",
+          "windowEnd": "2026-12-20",
           "method": "7-night public listing stay total divided by 7 (USD, 2 guests)",
-          "sevenNightTotal": 864,
-          "averageNightly": 123.43,
+          "sevenNightTotal": 861,
+          "averageNightly": 123,
           "nightlyPrices": [
             {
-              "date": "2026-11-28",
-              "effectiveNightly": 123.43
+              "date": "2026-12-13",
+              "effectiveNightly": 123
             },
             {
-              "date": "2026-11-29",
-              "effectiveNightly": 123.43
+              "date": "2026-12-14",
+              "effectiveNightly": 123
             },
             {
-              "date": "2026-11-30",
-              "effectiveNightly": 123.43
+              "date": "2026-12-15",
+              "effectiveNightly": 123
             },
             {
-              "date": "2026-12-01",
-              "effectiveNightly": 123.43
+              "date": "2026-12-16",
+              "effectiveNightly": 123
             },
             {
-              "date": "2026-12-02",
-              "effectiveNightly": 123.43
+              "date": "2026-12-17",
+              "effectiveNightly": 123
             },
             {
-              "date": "2026-12-03",
-              "effectiveNightly": 123.43
+              "date": "2026-12-18",
+              "effectiveNightly": 123
             },
             {
-              "date": "2026-12-04",
-              "effectiveNightly": 123.43
+              "date": "2026-12-19",
+              "effectiveNightly": 123
             }
           ],
           "status": "ok"
@@ -139,13 +139,13 @@
         "vrbo": {
           "channel": "vrbo",
           "label": "Vrbo",
-          "sourceUrl": "https://www.vrbo.com/4010862?chkin=2026-11-28&chkout=2026-12-05&x_pwa=1&adults=2",
-          "checkedAt": "2026-11-27T20:00:03.517Z",
+          "sourceUrl": "https://www.vrbo.com/4010862?chkin=2026-12-13&chkout=2026-12-20&x_pwa=1&adults=2",
+          "checkedAt": "2026-11-28T18:59:58.884Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
-          "windowStart": "2026-11-28",
-          "windowEnd": "2026-12-05",
+          "windowStart": "2026-12-13",
+          "windowEnd": "2026-12-20",
           "method": "7-night public listing stay total divided by 7 (USD, 2 guests)",
           "sevenNightTotal": null,
           "averageNightly": null,
@@ -155,13 +155,13 @@
         "booking": {
           "channel": "booking",
           "label": "Booking.com",
-          "sourceUrl": "https://www.booking.com/hotel/us/oilgate-at-oakdale.html?checkin=2026-11-28&checkout=2026-12-05&group_adults=2&no_rooms=1&selected_currency=USD",
-          "checkedAt": "2026-11-27T20:00:04.155Z",
+          "sourceUrl": "https://www.booking.com/hotel/us/oilgate-at-oakdale.html?checkin=2026-12-13&checkout=2026-12-20&group_adults=2&no_rooms=1&selected_currency=USD",
+          "checkedAt": "2026-11-28T18:59:59.606Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
-          "windowStart": "2026-11-28",
-          "windowEnd": "2026-12-05",
+          "windowStart": "2026-12-13",
+          "windowEnd": "2026-12-20",
           "method": "7-night public listing stay total divided by 7 (USD, 2 guests)",
           "sevenNightTotal": null,
           "averageNightly": null,
@@ -184,7 +184,7 @@
           "channel": "direct",
           "label": "vacationrentals.oilgaterealty.com",
           "sourceUrl": "https://vacationrentals.oilgaterealty.com",
-          "checkedAt": "2026-11-27T19:59:44.112Z",
+          "checkedAt": "2026-11-28T18:59:38.643Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
@@ -236,7 +236,7 @@
           "channel": "airbnb",
           "label": "Airbnb",
           "sourceUrl": "https://www.airbnb.com/rooms/1223194060259544334?check_in=2026-11-29&check_out=2026-12-06&adults=2",
-          "checkedAt": "2026-11-27T19:59:44.527Z",
+          "checkedAt": "2026-11-28T18:59:39.323Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
@@ -281,7 +281,7 @@
           "channel": "vrbo",
           "label": "Vrbo",
           "sourceUrl": "https://www.vrbo.com/4010834?chkin=2026-11-29&chkout=2026-12-06&x_pwa=1&adults=2",
-          "checkedAt": "2026-11-27T19:59:50.300Z",
+          "checkedAt": "2026-11-28T18:59:45.121Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
@@ -297,7 +297,7 @@
           "channel": "booking",
           "label": "Booking.com",
           "sourceUrl": "https://www.booking.com/hotel/us/oilgate-at-oakdale-akron.html?checkin=2026-11-29&checkout=2026-12-06&group_adults=2&no_rooms=1&selected_currency=USD",
-          "checkedAt": "2026-11-27T19:59:56.613Z",
+          "checkedAt": "2026-11-28T18:59:51.536Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
@@ -325,7 +325,7 @@
           "channel": "direct",
           "label": "vacationrentals.oilgaterealty.com",
           "sourceUrl": "https://vacationrentals.oilgaterealty.com",
-          "checkedAt": "2026-11-27T20:00:05.025Z",
+          "checkedAt": "2026-11-28T19:00:00.633Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
@@ -377,7 +377,7 @@
           "channel": "airbnb",
           "label": "Airbnb",
           "sourceUrl": "https://www.airbnb.com/rooms/1542810423162271885?check_in=2027-01-01&check_out=2027-01-08&adults=2",
-          "checkedAt": "2026-11-27T20:00:05.530Z",
+          "checkedAt": "2026-11-28T19:00:01.209Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
@@ -393,7 +393,7 @@
           "channel": "vrbo",
           "label": "Vrbo",
           "sourceUrl": null,
-          "checkedAt": "2026-11-27T20:00:06.344Z",
+          "checkedAt": "2026-11-28T19:00:02.758Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
@@ -409,7 +409,7 @@
           "channel": "booking",
           "label": "Booking.com",
           "sourceUrl": "https://www.booking.com/hotel/us/oilgate-at-parkgate.html?checkin=2027-01-01&checkout=2027-01-08&group_adults=2&no_rooms=1&selected_currency=USD",
-          "checkedAt": "2026-11-27T20:00:06.348Z",
+          "checkedAt": "2026-11-28T19:00:02.761Z",
           "currency": "USD",
           "nights": 7,
           "guests": 2,
